@@ -19,9 +19,8 @@ public class Variables {
 		memorySize = 8192;
 		hardDiskDriveCapacity = 1073741824L * 1024;
 		weight = 2.1F;
-		display = 15.6;
+		display = 15.61;
 		
-
         System.out.println("notebook " + notebook);
         System.out.println("this CPU have - " + cores + " cores");
         System.out.println("Frequency - " +frequency + " mHz");
