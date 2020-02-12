@@ -8,23 +8,23 @@ public class ConditionalStatement {
 			System.out.println(age + " more than 20");
 		}
 	
-		if(human == true) {
+		if (human == true) {
 			System.out.println(" man");
 		}
 		
-		if(human == false) {
+		if (human == false) {
 			System.out.println(" women");
 		}
 		
-		if(height < 180) {
+		if (height < 180) {
 			System.out.println("below 180");
 		} else {
 			System.out.println("higher 180");
 		}
 
-		if(firstLetterOfName == 109){
+		if (firstLetterOfName == 109) {
 			System.out.println("first letter of name is M");
-		} else if(firstLetterOfName == 111){
+		} else if (firstLetterOfName == 111) {
 			System.out.println("first letter of name is I");
 		} else {
 			System.out.println("another letter...");
