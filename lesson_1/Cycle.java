@@ -15,13 +15,13 @@ public class Cycle {
 		System.out.println(" ");
 
 		int x = 10;
-		int sum =0;
+		int sum = 0;
 		do {
 			if (x % 2 != 0) {
 				sum = sum + x;
 			}
 			x++;
-		} while(x <= 20);  
+		} while(x <= 20);   
 		System.out.println(sum);
 	}
 }
