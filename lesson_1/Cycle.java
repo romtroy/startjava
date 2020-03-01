@@ -12,7 +12,6 @@ public class Cycle {
 		}
 
 		System.out.println(" ");
-
 		int x = 10;
 		int sum = 0;
 		do {
