@@ -1,7 +1,7 @@
 public class ConditionalStatement {	
 	public static void main(String[] args) {
 		int age = 22;
-				
+
 		if (age > 20) {
 			System.out.println(age + " more than 20");
 		}
@@ -22,10 +22,10 @@ public class ConditionalStatement {
 			System.out.println("higher 180");
 		}
 		
-		char firstLetterOfName = 111;
-		if (firstLetterOfName == 109) {
+		char firstLetterOfName = 'I';
+				if (firstLetterOfName == 'M') {
 			System.out.println("first letter of name is M");
-		} else if (firstLetterOfName == 111) {
+		} else if (firstLetterOfName == 'I') {
 			System.out.println("first letter of name is I");
 		} else {
 			System.out.println("another letter...");
