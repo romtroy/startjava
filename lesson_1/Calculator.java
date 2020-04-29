@@ -1,6 +1,6 @@
 public class Calculator {	
 	public static void main(String[] args) {
-		int x = 10, y = 2;
+		int x = 80, y = 20;
 		double z;
 		char sign = 37; //+_43; -_821; *_42; /_824; ^_708; %_37 DEC;
 		
@@ -24,7 +24,7 @@ public class Calculator {
 			}
 			System.out.println(" x ^ y =  " + z);
 		} else if (sign == 37) {
-			z = x % y;
+			z = ((x*y)/100);
 			System.out.println(" x % y =  " + z);
 		}
 	}
