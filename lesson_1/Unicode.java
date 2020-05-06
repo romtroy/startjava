@@ -3,8 +3,7 @@ public class Unicode {
 		char symbol = 33;
 				
 		do {
-			System.out.print(" " + symbol);
-			symbol++;
+			System.out.print(" " + symbol++);
 		} while (symbol <= 126);
 	} 
 }
