@@ -14,6 +14,6 @@ public class MyFirstGame {
 				playerNum++; }
 			}while(hiddenNum != playerNum);
 		}
-		if (hiddenNum == playerNum)	System.out.println("You guess! " + playerNum);
+		if (hiddenNum == playerNum) System.out.println("You guess! " + playerNum);
 	}	
 }
