@@ -1,13 +1,18 @@
 class Person {	
 	String gender = "women";
-	float weight=55.5f;
-	float height=170.6f;
+	float weight = 55.5f;
+	float height = 170.6f;
 	int age = 43;
 	
-	void move(){
+	void move() {
 	}
-	void eat(){
+
+	void eat() {
 	}
-	void work(){
+
+	void work() {
+	}
+
+	void learnJava() {
 	}
 }
