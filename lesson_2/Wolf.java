@@ -6,49 +6,49 @@ public class Wolf {
 	private int age;
 	
 	public String getNick() {
-        return nick;
-    }
-    
+		return nick;
+	}
+
 	public void setNick(String nick) {
-        this.nick = nick;
-    }
-    
-    public int getAge() {
-        return age;
-    }
-    
-    public void setAge(int age) {
-    	if (age > 8) {
-    		System.out.println("Incorrect age");
-    	}
-        this.age = age;
-    }
-    
+		this.nick = nick;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		if (age > 8) {
+			System.out.println("Incorrect age");
+		}
+		this.age = age;
+	}
+	
 	public String getGender() {
-        return gender;
-    }
-    
+		return gender;
+	}
+
 	public void setGender(String gender) {
-        this.gender = gender;
-    }
+		this.gender = gender;
+	}
 	
 	public float getWeight() {
-        return weight;
-    }
-    
+		return weight;
+	}
+
 	public void setWeight(float weight) {
-        this.weight = weight;
-    }
+		this.weight = weight;
+	}
 	
 	public String getColor() {
-        return color;
-    }
-    
+		return color;
+	}
+
 	public void setColor(String color) {
-        this.color = color;
-    }
+		this.color = color;
+	}
 	
-    public void move() {
+	public void move() {
 	}
 
 	public void sit() {
