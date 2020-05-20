@@ -2,14 +2,19 @@ import java.util.Scanner;
 
 public class CalculatorTest {	
 	public static void main(String[] args) {
-		Calculator firstCalc = new Calculator();
-		firstCalc.x = 2;
-		firstCalc.y = 10;
-		System.out.println("first int- " + firstCalc.x);
+		Calculator calc = new Calculator();
+
+		Scanner scanInt = new Scanner(System.in);
+		System.out.print("first number: ");
+		int number1 = scanInt.nextInt();
+		System.out.print("second number: ");
+		int number2 = scanInt.nextInt();
+		calc.x = number1;
+		calc.y = number2;
 		Scanner scan = new Scanner(System.in);
 		System.out.print("your sign: ");
-		firstCalc.sign = scan.nextLine();
-		System.out.println("second int- " + firstCalc.y);
-		System.out.println("result = " + firstCalc.getResult());
+		String sign = scan.nextLine();
+		calc.setSign(sign);
+		System.out.println("result = " + calc.calculate());
 	}
 }

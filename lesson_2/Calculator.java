@@ -1,6 +1,6 @@
 public class Calculator {	
 	int x, y;
-	String sign;
+	private String sign;
 	int result;
 
 	public String getSign() {
@@ -11,7 +11,7 @@ public class Calculator {
 		this.sign = sign;
 	}
 
-	public int getResult() {
+	public int calculate() {
 		switch(getSign()) {
 			case "+":
 				result = x + y;
@@ -36,6 +36,6 @@ public class Calculator {
 				result = x % y;
 				break;		
 		}	
-			return result;
+		return result;
 	}
 }
