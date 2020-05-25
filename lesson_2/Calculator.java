@@ -1,7 +1,8 @@
-public class Calculator {	
-	int x, y;
+public class Calculator {
+//класс Calculator будет отвечать за проверку знака и мат. вычисления	
+	private int x,y;
 	private String sign;
-	int result;
+	private int result;
 
 	public String getSign() {
 		return sign;
@@ -10,9 +11,25 @@ public class Calculator {
 	public void setSign(String sign) {
 		this.sign = sign;
 	}
+	
+	public int getInt1() {
+		return x;
+	}
+	
+	public int getInt2() {
+		return y;
+	}
 
+	public void setInt1(int x) {
+		this.x = x;
+	}
+
+	public void setInt2(int y) {
+		this.y = y;
+	}
+	
 	public int calculate() {
-		switch(getSign()) {
+		switch(sign) {
 			case "+":
 				result = x + y;
 				break;
