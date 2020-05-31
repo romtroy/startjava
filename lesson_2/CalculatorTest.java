@@ -8,7 +8,7 @@ public class CalculatorTest {
 			Scanner scan = new Scanner(System.in);
 			System.out.print("first number: ");
 			int number1 = scan.nextInt();
-			calc.setInt1(number1);
+			calc.setX(number1);
 
 			System.out.print("your sign: ");
 			char sign = scan.next().charAt(0);
@@ -16,7 +16,7 @@ public class CalculatorTest {
 
 			System.out.print("second number: ");
 			int number2 = scan.nextInt();
-			calc.setInt2(number2);
+			calc.setY(number2);
 
 			System.out.println("result = " + calc.calculate());
 			System.out.println("Would you like to continue?(y/n)");
