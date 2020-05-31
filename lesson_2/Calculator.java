@@ -1,15 +1,24 @@
 public class Calculator {
-//класс Calculator будет отвечать за проверку знака и мат. вычисления	
-	private int x,y;
-	private String sign;
-	private int result;
 
-	public String getSign() {
+	private int x, y;
+	private char sign;
+	private int result;
+	private char signContinue;
+
+	public char getSign() {
 		return sign;
 	}
 
-	public void setSign(String sign) {
+	public void setSign(char sign) {
 		this.sign = sign;
+	}
+
+	public char getSignContinue() {
+		return signContinue;
+	}
+
+	public void setSignContinue(char signContinue) {
+		this.signContinue = signContinue;
 	}
 	
 	public int getInt1() {
@@ -30,26 +39,26 @@ public class Calculator {
 	
 	public int calculate() {
 		switch(sign) {
-			case "+":
+			case '+':
 				result = x + y;
 				break;
-			case "-":
+			case '-':
 				result = x - y;
 				break;
-			case "*":
+			case '*':
 				result = x * y;
 				break;
-			case "/":
+			case '/':
 				result = x / y;
 				break;
-			case "^":
+			case '^':
 				result = x;
 				while (y > 1) { 
 					result *=  x;
 					y--;
 				}
 				break;
-			case "%":
+			case '%':
 				result = x % y;
 				break;		
 		}	
