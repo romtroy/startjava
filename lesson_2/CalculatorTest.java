@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class CalculatorTest {	
 	public static void main(String[] args) {
-		
+		char signContinue = 'y';
 		Calculator calc = new Calculator();
+		Scanner scan = new Scanner(System.in);
 		do {
-			Scanner scan = new Scanner(System.in);
 			System.out.print("first number: ");
 			int number1 = scan.nextInt();
 			calc.setX(number1);
@@ -20,8 +20,11 @@ public class CalculatorTest {
 
 			System.out.println("result = " + calc.calculate());
 			System.out.println("Would you like to continue?(y/n)");
-			char signContinue = scan.next().charAt(0);
-			calc.setSignContinue(signContinue);
-		} while(calc.getSignContinue() == 'y');
+			for( ; ; ) {
+				signContinue = scan.next().charAt(0);
+				if (signContinue == 'y' | signContinue == 'n') break;
+				System.out.println("for continue please enter (y/n) ");
+			}
+		} while(signContinue == 'y');
 	}
 }

@@ -3,7 +3,6 @@ public class Calculator {
 	private int x, y;
 	private char sign;
 	private int result;
-	private char signContinue;
 
 	public char getSign() {
 		return sign;
@@ -12,25 +11,17 @@ public class Calculator {
 	public void setSign(char sign) {
 		this.sign = sign;
 	}
-
-	public char getSignContinue() {
-		return signContinue;
-	}
-
-	public void setSignContinue(char signContinue) {
-		this.signContinue = signContinue;
-	}
 	
 	public int getX() {
 		return x;
 	}
-	
-	public int getY() {
-		return y;
-	}
 
 	public void setX(int x) {
 		this.x = x;
+	}
+	
+	public int getY() {
+		return y;
 	}
 
 	public void setY(int y) {
