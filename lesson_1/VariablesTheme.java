@@ -4,8 +4,7 @@ public class VariablesTheme {
     System.out.println("1. Вывод характеристик компьютера:");
     byte cpu = 4;
     short mhz = 3000;
-    int memory = 8388608;
-    int price2 = 1500;
+    int memory = 8388608, price2 = 1500;
     long hdd = 1073741824;
     float weight = 1.85f;
     double monitor = 13.3;
@@ -89,8 +88,7 @@ public class VariablesTheme {
     System.out.println("" + char1 + char5 + char5 + char5 + char5 + char1 + char2 + char5 + char5 + char2 + "\n");
 
     System.out.println("8. Вывод количества сотен, десятков и единиц числа");
-    int number, hundreds, tens, units, sumOfDigits;
-    number = 123;
+    int number = 123, hundreds, tens, units, sumOfDigits;
     hundreds = number / 100;
     tens = (number % 100) / 10;
     units = (number % 10);
