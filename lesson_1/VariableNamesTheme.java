@@ -50,7 +50,7 @@ public class VariableNamesTheme {
 
         //число нулей
         int numbersZero = 000;
-        String formattedNumber2 = String.format("%04d", numbersZero);
+        String formattedNumber2 = String.format("%03d", numbersZero);
         System.out.println("число нулей: " + formattedNumber2);
         
         //уникальное число
