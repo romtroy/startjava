@@ -28,10 +28,12 @@ public class VariablesTheme {
         priceNumberOfDiscount = ((penCost + bookCost) * (discount/100));
         System.out.println("суммa скидки: " + priceNumberOfDiscount + " руб.");
         priceWithDiscount = priceFull - priceNumberOfDiscount;
-        System.out.println("общую стоимость товаров со скидкой: " + priceWithDiscount + " руб." + "\n");
+        System.out.println("общую стоимость со скидкой: " + priceWithDiscount + " руб." + "\n");
 
         System.out.println("3. Вывод слова JAVA");
-        System.out.println("   J    a  v     v  a\n   J   a a  v   v  a a\nJ  J  aaaaa  V V  aaaaa\n JJ  a     a  V  a     a\n");
+        System.out.println("   J    a  v     v  a\n   J   a a  v   v  a a");
+        System.out.println("J  J  aaaaa  V V  aaaaa\n JJ  a     a  V  a     a\n");
+        
         
         System.out.println("4. Вывод min и max значений целых числовых типов");
         byte byteMaxNumber = 127;
@@ -67,7 +69,8 @@ public class VariablesTheme {
         z2 = x2 ^ y2;
         x2 = z2 ^ x2;
         y2 = z2 ^ y2;
-        System.out.println("меняем с помощью побитовой операции ^: x2 = " + x2 + " y2 = " + y2 + "\n");
+        System.out.println("меняем с помощью побитовой операции ^: x2 = " + x2 + " y2 = " 
+            + y2 + "\n");
 
         System.out.println("6. Вывод символов и их кодов");
         char char1 = '\u0024'; // $ 
@@ -91,7 +94,8 @@ public class VariablesTheme {
         System.out.println("   " + char1 + "  " + char2);
         System.out.println("  " + char1 + char5 + char3 + " " + char4 + char2);
         System.out.println(" " + char1 + "      " + char2);
-        System.out.println("" + char1 + char5 + char5 + char5 + char5 + char1 + char2 + char5 + char5 + char2 + "\n");
+        System.out.println("" + char1 + char5 + char5 + char5 + char5 + char1 + char2 + char5 
+            + char5 + char2 + "\n");
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
         int number = 123;
