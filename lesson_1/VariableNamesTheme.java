@@ -2,39 +2,38 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class VariableNamesTheme {   
     public static void main(String[] args) {
-        /* Разные переменные */
         System.out.println("1. Разные переменные: ");
         /*цифрa */
         int number = 100;
         System.out.println("переменная типа byte a = " + number);
         
         //сумма чисел
-        int sum = (short) (number + number);
+        int sum = (number + number);
         System.out.println("сумма двух чисел sum = " + sum);
         
         //произведение цифр
-        int multiplicationNumber = number * sum;
-        System.out.println("произведение = " + multiplicationNumber);
+        int multiplicationNumbers = number * sum;
+        System.out.println("произведение = " + multiplicationNumbers);
         
         //максимальное число
         long maxNumber = 9223372036854775807L;
         System.out.println("максимальное число = " + maxNumber);
         
         //количество десятков
-        int numbersTen = multiplicationNumber / 10;
-        System.out.println("количество десятков d = " + numbersTen + " в переменной b");
+        int numbersTens = multiplicationNumbers / 10;
+        System.out.println("количество десятков d = " + numbersTens + " в переменной b");
         
         //вес собаки
         float dogWeight = 15.3f;
         System.out.println("вес собаки = " + dogWeight + "кг");
         
         //исходное число
-        int originNumber = multiplicationNumber / sum;
+        int originNumber = multiplicationNumbers / sum;
         System.out.println("исходное число: " + originNumber);
 
         //процент по вкладу
         double percentDeposit = 1000 * 0.12;
-        System.out.println("12 процентов по вкладу на 1000р составляют " + percentDeposit + " рублей");
+        System.out.println("12% по вкладу на 1000р составляют " + percentDeposit + " руб.");
         
         //(переменная хранит символ) &
         char ampersand = '&';
@@ -49,8 +48,8 @@ public class VariableNamesTheme {
         System.out.println(messageType);
 
         //число нулей
-        int numbersZero = 000;
-        String formattedNumber2 = String.format("%03d", numbersZero);
+        int numbersZeros = 000;
+        String formattedNumber2 = String.format("%03d", numbersZeros);
         System.out.println("число нулей: " + formattedNumber2);
         
         //уникальное число
@@ -62,8 +61,9 @@ public class VariableNamesTheme {
         System.out.println("Случайное число: " + randomNumber);
         
         //математическое выражение
-        int mathExprtession = (multiplicationNumber / numbersTen);
-        System.out.println("математическое выражение math: " + multiplicationNumber +" / " + numbersTen + " = " + mathExprtession);
+        int mathExprtession = (multiplicationNumbers / numbersTens);
+        System.out.println("математическое выражение math: " + 
+            multiplicationNumbers +" / " + numbersTens + " = " + mathExprtession);
         
         //выбор (чего-либо)
         int choice1 = 1, choice2 = 2;
@@ -82,8 +82,8 @@ public class VariableNamesTheme {
         System.out.println(item);
         
         //стоимость кофе на вынос
-        double cofePrice = 155.5;
-        System.out.println("Цена кофе: " + cofePrice + "рублей");
+        double cofePriceTakeAway = 155.5;
+        System.out.println("Цена кофе: " + cofePriceTakeAway + "рублей");
         
         //дата начала (чего-либо)
         String startDate = "15.02.2024";
@@ -110,7 +110,7 @@ public class VariableNamesTheme {
         System.out.println("вместимость: " + capacity + "Gb");
         
         //счетчик
-        int  counter = 0;
+        int counter = 0;
         counter++;
         System.out.println("Счётчик: " + counter);
         
@@ -119,7 +119,7 @@ public class VariableNamesTheme {
         System.out.println(pathToFile);
         
         //количество чисел в каждой строке
-        String quantityNumbersEachLine = "данный текст №1 содержит 2 цыфры";
+        String quantityNumbersEachLine = "данный текст №1 содержит 2 цифры";
         long countNumbers = quantityNumbersEachLine.codePoints().filter(Character::isDigit).count();
         System.out.println("количество чисел в тексте: " + countNumbers + "\n");
 
@@ -134,28 +134,28 @@ public class VariableNamesTheme {
         System.out.println("компьютер включен: " + isPcTurnOn);
         
         //есть равные цифры
-        boolean isNumbersEqual;
+        boolean hasNumbersEqual;
         choice1 = 2;
         choice2 = 3;
-        isNumbersEqual = (choice1 == choice2);
-        System.out.println("цифры равны: " + isNumbersEqual);
+        hasNumbersEqual = (choice1 == choice2);
+        System.out.println("цифры равны: " + hasNumbersEqual);
         
         //(что-либо) создано
-        boolean isSomethingExist = false;
-        System.out.println("объект создан: " + isSomethingExist);
+        boolean isCreated = false;
+        System.out.println("объект создан: " + isCreated);
         
         //(что-либо) пустое
-        String stringConsist = null;
-        boolean isSomethingEmpty = ( stringConsist == null);
+        String isEmpty = null;
+        boolean isSomethingEmpty = ( isEmpty == null);
         System.out.println("что-либо пустое " + isSomethingEmpty);
         
         //(что-либо) активное
-        boolean isSomethingActive = true;
-        System.out.println("что-то активно: " + isSomethingActive);
+        boolean isActive = true;
+        System.out.println("что-то активно: " + isActive);
         
         //новый?
-        boolean iSomethingNew = false;
-        System.out.println("новый: " + iSomethingNew);
+        boolean isNew = false;
+        System.out.println("новый: " + isNew);
         
         //электронная почта действительная?
         boolean isEmailActive = true;
@@ -163,37 +163,37 @@ public class VariableNamesTheme {
         
         //имеются уникальные строки
         String surname = "Иванов", surname2 = "Иванович";
-        boolean isUniqueString = (surname == surname2);
-        System.out.println("Наличие уникальных строк: " + isUniqueString + "\n");
+        boolean hasUniqueString = (surname == surname2);
+        System.out.println("Наличие уникальных строк: " + hasUniqueString + "\n");
         
         System.out.println("3. Аббревиатуры");
         
         //старый universally unique identifier
-        String oldUniversallyUniqueIdentifier = "старый Universally Unique Identifier ";
-        System.out.println(oldUniversallyUniqueIdentifier);
+        String oldUui = "старый Universally Unique Identifier ";
+        System.out.println(oldUui);
 
         //производитель оперативной памяти
-        String manufacturerMemory = "производитель оперативной памяти";
-        System.out.println(manufacturerMemory);
+        String manufacturerRam = "производитель оперативной памяти";
+        System.out.println(manufacturerRam);
                 
         //емкость жесткого диска
-        String capacityHardDrive = "емкость жесткого диска";
-        System.out.println(capacityHardDrive);
+        String capacityHdd = "емкость жесткого диска";
+        System.out.println(capacityHdd);
 
         //протокол передачи гипертекста
-        String hypertextTransferProtocol = "протокол передачи гипертекста";
-        System.out.println(hypertextTransferProtocol);
+        String http = "протокол передачи гипертекста";
+        System.out.println(http);
 
         //сокращенный uniform resource locator
-        String shortUiformResourceLocator = "сокращенный uniform resource locator";
-        System.out.println(shortUiformResourceLocator);
+        String shortUrs = "сокращенный uniform resource locator";
+        System.out.println(shortUrs);
 
         //новый идентификатор клиента
-        String newIdentifierClient = "новый идентификатор клиента";
-        System.out.println(newIdentifierClient);
+        String newClientId = "новый идентификатор клиента";
+        System.out.println(newClientId);
 
         //кодировка american standard code for information interchange
-        String americanStandartCodeForInformationIntercharge = "american standard code for information interchange";
-        System.out.println(americanStandartCodeForInformationIntercharge);
+        String ascii = "american standard code for information interchange";
+        System.out.println(ascii);
     }
 }
