@@ -19,13 +19,13 @@ public class VariablesTheme {
         int penCost = 100; 
         int bookCost = 200;
         double discount = 11;
-        double priceNumberOfDiscount;
+        double discountPrice;
         double priceWithDiscount;
         double fullPrice = (penCost + bookCost);
         System.out.println("стоимость товаров без скидки: " + fullPrice + " руб.");
-        priceNumberOfDiscount = ((penCost + bookCost) * (discount/100));
-        System.out.println("суммa скидки: " + priceNumberOfDiscount + " руб.");
-        priceWithDiscount = fullPrice - priceNumberOfDiscount;
+        discountPrice = ((penCost + bookCost) * (discount/100));
+        System.out.println("суммa скидки: " + discountPrice + " руб.");
+        priceWithDiscount = fullPrice - discountPrice;
         System.out.println("общую стоимость со скидкой: " + priceWithDiscount + " руб." + "\n");
 
         System.out.println("3. Вывод слова JAVA");
