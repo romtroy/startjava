@@ -63,7 +63,7 @@ public class VariableNamesTheme {
         //математическое выражение
         int mathExprtession = (multiplicationNumbers / numbersTens);
         System.out.println("математическое выражение math: " + 
-            multiplicationNumbers +" / " + numbersTens + " = " + mathExprtession);
+                multiplicationNumbers +" / " + numbersTens + " = " + mathExprtession);
         
         //выбор (чего-либо)
         int choice1 = 1, choice2 = 2;
@@ -162,19 +162,19 @@ public class VariableNamesTheme {
         System.out.println("e-mail активен: " + isEmailActive);
         
         //имеются уникальные строки
-        String surname = "Иванов", surname2 = "Иванович";
-        boolean hasUniqueString = (surname == surname2);
+        String surname = "Иванов";
+        boolean hasUniqueString = (surname == "Иванов");
         System.out.println("Наличие уникальных строк: " + hasUniqueString + "\n");
         
         System.out.println("3. Аббревиатуры");
         
         //старый universally unique identifier
-        String oldUui = "старый Universally Unique Identifier ";
-        System.out.println(oldUui);
+        String oldUuid = "старый Universally Unique Identifier ";
+        System.out.println(oldUuid);
 
         //производитель оперативной памяти
-        String manufacturerRam = "производитель оперативной памяти";
-        System.out.println(manufacturerRam);
+        String ramManufacturer = "производитель оперативной памяти";
+        System.out.println(ramManufacturer);
                 
         //емкость жесткого диска
         String capacityHdd = "емкость жесткого диска";
@@ -185,8 +185,8 @@ public class VariableNamesTheme {
         System.out.println(http);
 
         //сокращенный uniform resource locator
-        String shortUrs = "сокращенный uniform resource locator";
-        System.out.println(shortUrs);
+        String shortUrl = "сокращенный uniform resource locator";
+        System.out.println(shortUrl);
 
         //новый идентификатор клиента
         String newClientId = "новый идентификатор клиента";
