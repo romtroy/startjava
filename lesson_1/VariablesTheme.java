@@ -95,10 +95,11 @@ public class VariablesTheme {
         char lowLineSign = 95; //  _
         System.out.println("    " + slashSign + backSlashSign);
         System.out.println("   " + slashSign + "  " + backSlashSign);
-        System.out.println("  " + slashSign + lowLineSign + leftParenthesisSign + " " + rightParenthesisSign + backSlashSign);
+        System.out.println("  " + slashSign + lowLineSign + leftParenthesisSign + " " + 
+                rightParenthesisSign + backSlashSign);
         System.out.println(" " + slashSign + "      " + backSlashSign);
-        System.out.println("" + slashSign + lowLineSign + lowLineSign + lowLineSign + lowLineSign + slashSign + backSlashSign + lowLineSign 
-            + lowLineSign + backSlashSign + "\n");
+        System.out.println("" + slashSign + lowLineSign + lowLineSign + lowLineSign + lowLineSign + 
+                slashSign + backSlashSign + lowLineSign + lowLineSign + backSlashSign + "\n");
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
         int number = 123;
