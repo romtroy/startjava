@@ -27,10 +27,10 @@ public class VariablesTheme {
         System.out.println("общую стоимость со скидкой: " + priceWithDiscount + " руб." + "\n");
 
         System.out.println("3. Вывод слова JAVA");
-        System.out.println("   J    a  v     v  a\n"
-                        + "   J   a a  v   v  a a\n" + 
-                        "J  J  aaaaa  V V  aaaaa\n"
-                        + " JJ  a     a  V  a     a\n");
+        System.out.println("   J    a  v     v  a\n" +
+                        "   J   a a  v   v  a a\n" + 
+                        "J  J  aaaaa  V V  aaaaa\n" +
+                        " JJ  a     a  V  a     a\n");
         
         System.out.println("4. Вывод min и max значений целых числовых типов");
         byte byteMax = 127;
@@ -38,25 +38,17 @@ public class VariablesTheme {
         int intMax = 2147483647;
         long longMax = 9223372036854775807L;
         System.out.println(byteMax);
-        byteMax++;
-        System.out.println(byteMax);
-        byteMax--;
-        System.out.println(byteMax);
+        System.out.println((byte)(byteMax + 1));
+        System.out.println(byteMax -1 );
         System.out.println(shortMax);
-        shortMax++;
-        System.out.println(shortMax);
-        shortMax--;
-        System.out.println(shortMax);
+        System.out.println((short)(shortMax + 1));
+        System.out.println(shortMax - 1);
         System.out.println(intMax);
-        intMax++;
-        System.out.println(intMax);
-        intMax--;
-        System.out.println(intMax);
+        System.out.println(intMax + 1);
+        System.out.println(intMax - 1);
         System.out.println(longMax);
-        longMax++;
-        System.out.println(longMax);
-        longMax--;
-        System.out.println(longMax + "\n");
+        System.out.println(longMax + 1);
+        System.out.println((longMax - 1) + "\n");
         
         System.out.println("5. Перестановка значений переменных");
         int x = 2;
@@ -66,25 +58,25 @@ public class VariablesTheme {
         x = y;
         y = swap;
         System.out.println("меняем с помощью третьей переменной: x = " + x + " y = " + y);
-        swap = x * y;
-        x = swap / x;
-        y = swap / y;
+        x = x + y;
+        y = x - y;
+        x = x - y;
         System.out.println("меняем с помощью арифметических операций: x = " + x + " y = " + y);
-        swap = x ^ y;
-        x = swap ^ x;
-        y = swap ^ y;
+        x = y ^ x;
+        y = x ^ y;
+        x = y ^ x;
         System.out.println("меняем с помощью побитовой операции ^: x = " + x + " y = " + y + "\n");
 
         System.out.println("6. Вывод символов и их кодов");
         dollar = '$';
-        char star = '*';
-        char at = '@';
-        char line = '|';
+        char asterisk = '*';
+        char atSign = '@';
+        char verticalBar = '|';
         char tilde = '~';
         System.out.println("код символа " + (int) dollar + " = " + dollar);
-        System.out.println("код символа " + (int) star + " = " + star);
-        System.out.println("код символа " + (int) at + " = " + at);
-        System.out.println("код символа " + (int) line + " = " + line);
+        System.out.println("код символа " + (int) asterisk + " = " + asterisk);
+        System.out.println("код символа " + (int) atSign + " = " + atSign);
+        System.out.println("код символа " + (int) verticalBar + " = " + verticalBar);
         System.out.println("код символа " + (int) tilde + " = " + tilde + "\n");
 
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
@@ -92,7 +84,7 @@ public class VariablesTheme {
         char backSlash = '\\';
         char leftParenthesis = '(';
         char rightParenthesis = ')';
-        char lowLine = 95;
+        char lowLine = '_';
         System.out.println("    " + slash + backSlash);
         System.out.println("   " + slash + "  " + backSlash);
         System.out.println("  " + slash + lowLine + leftParenthesis + " " + 
@@ -106,13 +98,13 @@ public class VariablesTheme {
         int hundreds = number / 100;
         int tens = (number % 100) / 10;
         int ones = (number % 10);
-        int sumOfDigits = hundreds + tens + ones;
+        int sum = hundreds + tens + ones;
         int multiplication = hundreds * tens * ones;
         System.out.println("Число N содержит:");
         System.out.println("сотен - " + hundreds);
         System.out.println("десятков - " + tens);
         System.out.println("единиц - " + ones);
-        System.out.println("Сумма его цифр: " + sumOfDigits);
+        System.out.println("Сумма его цифр: " + sum);
         System.out.println("Произведение: " + multiplication + "\n");
         
         System.out.println("9. Вывод времени: ");
@@ -121,6 +113,5 @@ public class VariablesTheme {
         int mm = (ss / 60 % 60);
         int seconds2 = (ss % 60);
         System.out.println(hh + ":" + mm + ":" + seconds2);
-
     }
 }
