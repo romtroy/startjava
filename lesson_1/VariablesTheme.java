@@ -28,9 +28,9 @@ public class VariablesTheme {
 
         System.out.println("3. Вывод слова JAVA");
         System.out.println("   J    a  v     v  a\n" +
-                        "   J   a a  v   v  a a\n" + 
-                        "J  J  aaaaa  V V  aaaaa\n" +
-                        " JJ  a     a  V  a     a\n");
+                "   J   a a  v   v  a a\n" + 
+                "J  J  aaaaa  V V  aaaaa\n" +
+                " JJ  a     a  V  a     a\n");
         
         System.out.println("4. Вывод min и max значений целых числовых типов");
         byte byteMax = 127;
@@ -38,17 +38,17 @@ public class VariablesTheme {
         int intMax = 2147483647;
         long longMax = 9223372036854775807L;
         System.out.println(byteMax);
-        System.out.println((byte)(byteMax + 1));
-        System.out.println(byteMax -1 );
+        System.out.println((byte)(byteMax++));
+        System.out.println(byteMax--);
         System.out.println(shortMax);
-        System.out.println((short)(shortMax + 1));
-        System.out.println(shortMax - 1);
+        System.out.println((short)(shortMax++));
+        System.out.println(shortMax--);
         System.out.println(intMax);
-        System.out.println(intMax + 1);
-        System.out.println(intMax - 1);
+        System.out.println(intMax++);
+        System.out.println(intMax--);
         System.out.println(longMax);
-        System.out.println(longMax + 1);
-        System.out.println((longMax - 1) + "\n");
+        System.out.println(longMax++);
+        System.out.println((longMax--) + "\n");
         
         System.out.println("5. Перестановка значений переменных");
         int x = 2;
@@ -58,13 +58,15 @@ public class VariablesTheme {
         x = y;
         y = swap;
         System.out.println("меняем с помощью третьей переменной: x = " + x + " y = " + y);
-        x = x + y;
+        System.out.println("Исходные значения: x = " + x + " y = " + y);
+        x += y;
         y = x - y;
-        x = x - y;
+        x -= y;
         System.out.println("меняем с помощью арифметических операций: x = " + x + " y = " + y);
-        x = y ^ x;
-        y = x ^ y;
-        x = y ^ x;
+        System.out.println("Исходные значения: x = " + x + " y = " + y);
+        x ^= y;
+        y ^= x;
+        x ^= y;
         System.out.println("меняем с помощью побитовой операции ^: x = " + x + " y = " + y + "\n");
 
         System.out.println("6. Вывод символов и их кодов");
