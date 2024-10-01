@@ -1,22 +1,20 @@
 public class CyclesTheme {
 
-    public static void main(String[] args) {
-        
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int numberber1 = -10;
-        int numberber2 = 21;
-        int evennumberbers = 0, oddnumberbers = 0;
-        System.out.print("В отрезке [" + numberber1 + ", " + numberber2 + "]");
+        int number1 = -10;
+        int number2 = 21;
+        int evennumbers = 0, oddnumbers = 0;
+        System.out.print("В отрезке [" + number1 + ", " + number2 + "]");
         do {
-            if (numberber1 % 2 == 0 ) {
-                evennumberbers = evennumberbers + numberber1;
-            } else {
-                oddnumberbers += numberber1;
+            if (number1 % 2 == 0 ) {
+                evennumbers = evennumbers + number1;
+            } else if (number1 % 2 != 0 ){
+                oddnumbers += number1;
             }
-            numberber1++;
-        } while (numberber1 < numberber2);
+            number1++;
+        } while (number1 <= number2);
         
-        System.out.println(" сумма четных чисел = " + evennumberbers + ", а нечетных =  " + oddnumberbers);
+        System.out.println(" сумма четных чисел = " + evennumbers + ", а нечетных =  " + oddnumbers);
         
         System.out.println("\n2. Вывод чисел в порядке убывания");
         int numberberA = -3;
@@ -31,31 +29,26 @@ public class CyclesTheme {
             System.out.println("max: " + numberberA + " min: " + numberberC);       
         }
         else if (numberberA >= numberberB && numberberA >= numberberC && numberberC >= numberberB) {
-            //System.out.println(numberberA + " " + numberberC + " " + numberberB);
             maxnumberber = numberberA;
             minnumberber = numberberB;
             System.out.println("max: " + numberberA + " min: " + numberberB);
         }
         if (numberberB >= numberberA && numberberB >= numberberC && numberberA >= numberberC) {
-            //System.out.println(numberberB + " " + numberberA + " " + numberberC);
             maxnumberber = numberberB;
             minnumberber = numberberC;
             System.out.println("max: " + numberberB + " min: " + numberberC);
         }
         else if (numberberB >= numberberA && numberberB >= numberberC && numberberC >= numberberA) {
-            //System.out.println(numberberB + " " + numberberC + " " + numberberA);
             maxnumberber = numberberB;
             minnumberber = numberberA;
             System.out.println("max: " + numberberB + " min: " + numberberA);
         }
         if (numberberC >= numberberA && numberberC >= numberberB && numberberA >= numberberB) {
-            //System.out.println(numberberC + " " + numberberA + " " + numberberB);
             maxnumberber = numberberC;
             minnumberber = numberberB;
             System.out.println("max: " + numberberC + " min: " + numberberB);
         }
         else if (numberberC >= numberberA && numberberC >= numberberB && numberberB >= numberberA) {
-            //System.out.println(numberberC + " " + numberberB + " " + numberberA);
             maxnumberber = numberberC;
             minnumberber = numberberA;
             System.out.println("max: " + numberberC + " min: " + numberberA);
@@ -78,45 +71,36 @@ public class CyclesTheme {
         System.out.println("\n" + sum);
         
         System.out.println("\n4. Вывод чисел в несколько строк");
-        numberberA = 1;
-        numberberB = 23;
+        int numberA = 1;
+        int numberB = 24;
         int counter = 0;
-        int p = 0;
-        
-        for (i = numberberA; i <= numberberB; i += 2) {
-            //System.out.print(i + " ");
-            System.out.printf("%2d ",i);
-            p++;
-            //counter++;
-            if (p % 5 == 0) {
-                //System.out.print(i + " ");
-                System.out.println(" ");
-            } 
-            if  ( i >= numberberB) {
-                
-                System.out.print("O");
+        int zero = 0;
+    
+        for ( i = numberA; i <= numberB; i += 2) {
+            if (counter % 5 != 0)  {
+                System.out.printf("%2d ",i);
             }
-              
-             /*  if (i % 2) != 0
-              *         System.out.print(i + " ");
-            p++;
-            if (p % 5 == 0) {
+                
+            if (counter % 5 == 0)  {
                 System.out.println(" ");
-              * 
-              * 
-              * while ((counter - 1) % 5 != 0) {
-             System.out.printf("%3d", 0);
-             counter++;
-        }*/
-        } 
-        
+                System.out.printf("%2d ",i);
+            }
+            counter++;
+        }
+            
+            if (counter % 5 != 0) {
+                do {
+                    counter++;
+                 System.out.printf("%2d ",zero);
+                } while (counter % 5 != 0);
+            }
+            
         System.out.println("\n\n5. Проверка количества двоек числа на четность/нечетность");
         int x = 3242592;
         int quantityTwo = 0;
         System.out.print("В " + x);
         while(x > 0) {  
             int numberberX = x % 10; 
-            //System.out.printf("%d ", numberberX);
             if (numberberX == 2) {
                 quantityTwo++;
             }
@@ -158,9 +142,7 @@ public class CyclesTheme {
         System.out.println("DECIMAL   CHARACTER   DESCRIPTION");
         char asciiSymbol = 33;
         for (i = 33; i <= 47; i += 2) {
-            //String template = ("  "  +(int)asciiSymbol + "          %c      " + (Character.getName(asciiSymbol)));
             String template = ("  "  +(int)asciiSymbol + "          %c      " + "%-1s " );
-            //System.out.println(String.format(template, asciiSymbol) );
             System.out.println(String.format(template, asciiSymbol, (Character.getName(asciiSymbol))) );
             asciiSymbol += 2;
         }
@@ -181,7 +163,6 @@ public class CyclesTheme {
         while(number != 0) {
             reverseNumber = number % 10;
             i = i * 10 + reverseNumber;
-            //System.out.println("I -" + i);
             number = number / 10;
         }
             if(originalNumber == i) {
@@ -216,22 +197,7 @@ public class CyclesTheme {
            System.out.println("Сумма цифр ABC = " + firstNumber + " , а сумма DEF = " + secondNumber);
            
            System.out.println("\n10. Отображение таблицы умножения Пифагора");
-           /*с помощью for отобразите таблицу умножения в точности, как в образце (включая горизонтальные и вертикальные линии.
-            Их можно отображать прерывистыми)
-            for (i = 1; i <= 9; i++) {
-               System.out.println("");
-               for (int j = 1; j <= 9; j++) {
-                   System.out.print(i * j + " ");
-               }
-           }
-            */
-           
-           /*for (i = 1; i < 10; i++) {
-               //if(i<2)
-               System.out.println("p");
-               for (int j = 1; j <= 9; j++) {
-                   System.out.print(i * j + " ");
-               } */
+          
            int z = 0;
            for (i = 1; i < 10; i++) {
                for (int j = 1; j < 10; j++) {
