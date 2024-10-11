@@ -8,7 +8,7 @@ public class RpsGameFormatting {
         String paper = "✋";
         // Ход первого игрока
         String name1 = "HEL";
-        Random r = new Random( );
+        Random r = new Random();
         int position1 = r.nextInt(1, 100);
         String sign1 = rock;
         if (position1 > 66) {
@@ -30,10 +30,10 @@ public class RpsGameFormatting {
         String name2 = "WALLE";
         int position2 = r.nextInt(1, 100);
         String sign2 = rock;
-        if (position2 > 66) {
+        if (position1 > 66) {
             sign2 = paper;
         } else {
-            if (position2 > 33) {
+            if (position1 > 33) {
                 sign2 = scissors;
             }
         }

@@ -1,78 +1,74 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int number1 = -10;
-        int number2 = 21;
-        int evennumbers = 0; 
-        int oddnumbers = 0;
-        System.out.print("В отрезке [" + number1 + ", " + number2 + "]");
+        int numberFirst = -10;
+        int numberLast = 21;
+        int oddNumbersSumSum = 0; 
+        int oddNumbers = 0;
+        System.out.print("В отрезке [" + numberFirst + ", " + numberLast + "]");
         do {
-            if (number1 % 2 == 0) {
-                evennumbers = evennumbers + number1;
-            } else if (number1 % 2 != 0) {
-                oddnumbers += number1;
+            if (numberFirst % 2 == 0) {
+                oddNumbersSumSum = oddNumbersSumSum + numberFirst;
+            } else if (numberFirst % 2 != 0) {
+                oddNumbers += numberFirst;
             }
-            number1++;
-        } while (number1 <= number2);
+            numberFirst++;
+        } while (numberFirst <= numberLast);
         
-        System.out.println(" сумма четных чисел = " + evennumbers + ", а нечетных =  " + oddnumbers);
+        System.out.println(" сумма четных чисел = " + oddNumbersSumSum + ", а нечетных =  " + oddNumbers);
 
         System.out.println("\n2. Вывод чисел в порядке убывания");
-        int numberberA = -3;
-        int numberberB = 10;
-        int numberberC = 5;
-        int maxnumberber = 0;
-        int minnumberber = 0;
+        int numberA = -3;
+        int numberB = 5;
+        int numberC = 10;
+        int maxNumber = 0;
+        int minNumber = 0;
 
-        if (numberberA >= numberberB && numberberA >= numberberC && numberberB >= numberberC) {
-            maxnumberber = numberberA;
-            minnumberber = numberberC;
-            System.out.println("max: " + numberberA + " min: " + numberberC);       
-        } else if (numberberA >= numberberB && numberberA >= numberberC && numberberC >= numberberB) {
-            maxnumberber = numberberA;
-            minnumberber = numberberB;
-            System.out.println("max: " + numberberA + " min: " + numberberB);
+        if (numberA > numberB && numberA > numberC) {
+            maxNumber = numberA;
+        } else if (numberB > numberA && numberB > numberC) {
+            maxNumber = numberB;
+        } else if (numberC > numberA && numberC > numberB) {
+            maxNumber = numberC;
         }
-        if (numberberB >= numberberA && numberberB >= numberberC && numberberA >= numberberC) {
-            maxnumberber = numberberB;
-            minnumberber = numberberC;
-            System.out.println("max: " + numberberB + " min: " + numberberC);
-        } else if (numberberB >= numberberA && numberberB >= numberberC && numberberC >= numberberA) {
-            maxnumberber = numberberB;
-            minnumberber = numberberA;
-            System.out.println("max: " + numberberB + " min: " + numberberA);
+        if (numberA < numberB && numberA < numberC) {
+            minNumber = numberA;
+        } else if (numberB < numberA && numberB < numberC) {
+            minNumber = numberB;
+        } else if (numberC < numberA && numberC < numberB) {
+            minNumber = numberC;
         }
-        if (numberberC >= numberberA && numberberC >= numberberB && numberberA >= numberberB) {
-            maxnumberber = numberberC;
-            minnumberber = numberberB;
-            System.out.println("max: " + numberberC + " min: " + numberberB);
-        } else if (numberberC >= numberberA && numberberC >= numberberB && numberberB >= numberberA) {
-            maxnumberber = numberberC;
-            minnumberber = numberberA;
-            System.out.println("max: " + numberberC + " min: " + numberberA);
-        }
-        for (int i = minnumberber; i <= maxnumberber; i++) {
+        System.out.println("max: " + maxNumber + " min: " + minNumber);
+        for (int i = (minNumber + 1); i < maxNumber; i++) {
             System.out.print(i + " ");
         }
-        
+            
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
-        int numberberTask3 = 1234;
-        int i = 0;
+        int workNumber = 1234;
+        int numberReversCount = workNumber;
+        int countNumber = 0;
+        do {
+            countNumber++;
+            numberReversCount /= 10;   
+        } while (numberReversCount != 0);
+        System.out.println("Количество чисел: " + countNumber);
+        System.out.print("Реверсивное число: ");
         int sum = 0;
-        while (i < 4) {
-            int m = numberberTask3 % 10;
-            numberberTask3 = numberberTask3 / 10;
+        while (numberReversCount < countNumber) {
+            int m = workNumber % 10;
+            workNumber = workNumber / 10;
             System.out.print(m);
             sum = sum + m;
-            i++;
+            numberReversCount++;
         }
-        System.out.println("\n" + sum);
-        
+        System.out.println("\n" + "Сумма цифр: " + sum);
+ 
         System.out.println("\n4. Вывод чисел в несколько строк");
-        int numberA = 1;
-        int numberB = 24;
+        numberA = 1;
+        numberB = 24;
         int counter = 0;
         int zero = 0;
+        int i;
         for (i = numberA; i <= numberB; i += 2) {
             if (counter % 5 != 0) {
                 System.out.printf("%2d ", i);
@@ -91,15 +87,15 @@ public class CyclesTheme {
         }
             
         System.out.println("\n\n5. Проверка количества двоек числа на четность/нечетность");
-        int x = 3242592;
+        int numberResearch = 3242592;
         int quantityTwo = 0;
-        System.out.print("В " + x);
-        while (x > 0) {  
-            int numberberX = x % 10; 
-            if (numberberX == 2) {
+        System.out.print("В " + numberResearch);
+        while (numberResearch > 0) {  
+            int numberbernumberResearch = numberResearch % 10; 
+            if (numberbernumberResearch == 2) {
                 quantityTwo++;
             }
-            x /= 10;
+            numberResearch /= 10;
         }
         boolean oddOreverseNumberen = (quantityTwo % 2 == 0);
         String oddOreverseNumberenString;
@@ -194,15 +190,15 @@ public class CyclesTheme {
         
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
         
-        int z = 0;
+        int k = 0;
         for (i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
-                z = i * j;
+                k = i * j;
                 if (j == 1) {
-                    System.out.printf("%5d", z);
+                    System.out.printf("%5d", k);
                     System.out.print("|");
                 } else {
-                    System.out.printf("%5d", z);
+                    System.out.printf("%5d", k);
                 }
             }
             if (i == 1) {

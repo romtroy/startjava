@@ -14,23 +14,31 @@ public class Calculator {
             int number2 = scan.nextInt();
             if (sign == '+') {
                 result = number1 + number2;
+                System.out.println(result);
             } else if (sign == '-') {
                 result = number1 - number2;
+                System.out.println(result);
             } else if (sign == '*') {
                 result = number1 * number2;
+                System.out.println(result);
             } else if (sign == '/') {
                 result = number1 / number2;
+                System.out.println(result);
             } else if (sign == '^') {
-                for (int j = 1; j <= number2; j++) {
-                    result *= number1;
+                for (int z = 1; z <= number2; z++) {
+                    result = result * number1;
                 }
+                System.out.println(result);
             } else if (sign == '%') {
                 result = number1 % number2;
+                System.out.println(result);
             }
-            System.out.println(number1 + " " + sign + " " + number2 + " = " + result);
             System.out.println("Would you like to continue?(y/n)");
-            signContinue = scan.next().charAt(0);
-            if (signContinue == 'n') break;
+            for ( ; ; ) {
+                signContinue = scan.next().charAt(0);
+                if (signContinue == 'y' | signContinue == 'n') break;
+                System.out.println("for continue please enter (y/n) ");
+            }
         } while (signContinue == 'y');
     }
 }
