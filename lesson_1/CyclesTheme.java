@@ -1,42 +1,47 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int numberFirst = -10;
-        int numberLast = 21;
-        int oddNumbersSumSum = 0; 
-        int oddNumbers = 0;
-        System.out.print("В отрезке [" + numberFirst + ", " + numberLast + "]");
+        int startRange = -10;
+        int endRange = 21;
+        int sumEvenNumbers = 0; 
+        int sumOddNumbers = 0;
+        System.out.print("В отрезке [" + startRange + ", " + endRange + "]");
         do {
-            if (numberFirst % 2 == 0) {
-                oddNumbersSumSum = oddNumbersSumSum + numberFirst;
-            } else if (numberFirst % 2 != 0) {
-                oddNumbers += numberFirst;
+            if (startRange % 2 == 0) {
+                sumEvenNumbers += startRange;
+            } else { 
+                sumOddNumbers += startRange;
             }
-            numberFirst++;
-        } while (numberFirst <= numberLast);
+            startRange++;
+        } while (startRange <= endRange);
         
-        System.out.println(" сумма четных чисел = " + oddNumbersSumSum + ", а нечетных =  " + oddNumbers);
+        System.out.println(" сумма четных чисел = " + sumEvenNumbers + ", а нечетных =  " + sumOddNumbers);
 
         System.out.println("\n2. Вывод чисел в порядке убывания");
-        int numberA = -3;
-        int numberB = 5;
-        int numberC = 10;
+        int a = -3;
+        int b = 5;
+        int c = 10;
         int maxNumber = 0;
         int minNumber = 0;
 
-        if (numberA > numberB && numberA > numberC) {
-            maxNumber = numberA;
-        } else if (numberB > numberA && numberB > numberC) {
-            maxNumber = numberB;
-        } else if (numberC > numberA && numberC > numberB) {
-            maxNumber = numberC;
-        }
-        if (numberA < numberB && numberA < numberC) {
-            minNumber = numberA;
-        } else if (numberB < numberA && numberB < numberC) {
-            minNumber = numberB;
-        } else if (numberC < numberA && numberC < numberB) {
-            minNumber = numberC;
+        if (a > b && a > c && b > c) {
+            maxNumber = a;
+            minNumber = c;
+        } else if (a > b && a > c && c > b) {
+            maxNumber = a;
+            minNumber = b;    
+        } else if (b > a && b > c && a > c) {
+            maxNumber = b;
+            minNumber = c;
+        } else if (b > a && b > c && c > a) {
+            maxNumber = b;
+            minNumber = a;
+        } else if (c > a && c > b && b > a) {
+            maxNumber = c;
+            minNumber = a;
+        } else if (c > a && c > b && a > a) {
+            maxNumber = c;
+            minNumber = b;
         }
         System.out.println("max: " + maxNumber + " min: " + minNumber);
         for (int i = (minNumber + 1); i < maxNumber; i++) {
@@ -45,27 +50,21 @@ public class CyclesTheme {
             
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
         int workNumber = 1234;
-        int numberReversCount = workNumber;
-        int countNumber = 0;
-        do {
-            countNumber++;
-            numberReversCount /= 10;   
-        } while (numberReversCount != 0);
-        System.out.println("Количество чисел: " + countNumber);
+        int workNumberCopy = workNumber;
         System.out.print("Реверсивное число: ");
         int sum = 0;
-        while (numberReversCount < countNumber) {
-            int m = workNumber % 10;
-            workNumber = workNumber / 10;
-            System.out.print(m);
-            sum = sum + m;
-            numberReversCount++;
+        while (workNumber > 0) {
+            int temporaryVariable = workNumber % 10;
+            workNumber /= 10;
+            System.out.print(temporaryVariable);
+            sum += temporaryVariable;
+            workNumberCopy++;
         }
         System.out.println("\n" + "Сумма цифр: " + sum);
  
         System.out.println("\n4. Вывод чисел в несколько строк");
-        numberA = 1;
-        numberB = 24;
+        int numberA = 1;
+        int numberB = 24;
         int counter = 0;
         int zero = 0;
         int i;
@@ -91,8 +90,8 @@ public class CyclesTheme {
         int quantityTwo = 0;
         System.out.print("В " + numberResearch);
         while (numberResearch > 0) {  
-            int numberbernumberResearch = numberResearch % 10; 
-            if (numberbernumberResearch == 2) {
+            int numberResearchTemporary = numberResearch % 10; 
+            if (numberResearchTemporary == 2) {
                 quantityTwo++;
             }
             numberResearch /= 10;
@@ -149,15 +148,15 @@ public class CyclesTheme {
      
         int number = 1234321;
         int reverseNumber = 0;
-        i = 0;
+        int temporaryVariable = 0;
         int originalNumber = number;
 
         while (number != 0) {
             reverseNumber = number % 10;
-            i = i * 10 + reverseNumber;
-            number = number / 10;
+            temporaryVariable = temporaryVariable * 10 + reverseNumber;
+            number /= 10;
         }
-        if (originalNumber == i) {
+        if (originalNumber == temporaryVariable) {
             System.out.println("число " + originalNumber + " является палиндромом");
         } else {
             System.out.println("число " + originalNumber + " не является палиндромом");
@@ -168,16 +167,16 @@ public class CyclesTheme {
         originalNumber = number;
         int firstNumber = 0;
         int secondNumber = 0;
-        i = 0;
+        counter = 0;
         while (number != 0) {
             int singleNumber = number % 10;
             number = number / 10;
-            if (i < 3) {
-                secondNumber = secondNumber + singleNumber;
+            if (counter < 3) {
+                secondNumber += singleNumber;
             } else {
-                firstNumber = firstNumber + singleNumber;
+                firstNumber += singleNumber;
             }
-            i++;
+            counter++;
         }
         String happyWord;
         if (firstNumber == secondNumber) {
