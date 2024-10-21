@@ -24,24 +24,24 @@ public class CyclesTheme {
         int maxNumber = 0;
         int minNumber = 0;
 
-        if (a > b && a > c && b > c) {
+        if (a > b && a > c) {
             maxNumber = a;
-            minNumber = c;
-        } else if (a > b && a > c && c > b) {
-            maxNumber = a;
-            minNumber = b;    
-        } else if (b > a && b > c && a > c) {
+            if (b > c) {
+                minNumber = c;
+            } else {
+                minNumber = b;
+            }
+        }
+        if (b > a && b > c) {
             maxNumber = b;
-            minNumber = c;
-        } else if (b > a && b > c && c > a) {
-            maxNumber = b;
-            minNumber = a;
-        } else if (c > a && c > b && b > a) {
+            if (a > c) {
+                minNumber = c;
+            } else {
+                minNumber = a;
+            }
+        } else {
             maxNumber = c;
             minNumber = a;
-        } else if (c > a && c > b && a > a) {
-            maxNumber = c;
-            minNumber = b;
         }
         System.out.println("max: " + maxNumber + " min: " + minNumber);
         for (int i = (minNumber + 1); i < maxNumber; i++) {
@@ -50,76 +50,74 @@ public class CyclesTheme {
             
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
         int workNumber = 1234;
-        int workNumberCopy = workNumber;
         System.out.print("Реверсивное число: ");
         int sum = 0;
         while (workNumber > 0) {
-            int temporaryVariable = workNumber % 10;
+            int digit = workNumber % 10;
             workNumber /= 10;
-            System.out.print(temporaryVariable);
-            sum += temporaryVariable;
-            workNumberCopy++;
+            System.out.print(digit);
+            sum += digit;
         }
         System.out.println("\n" + "Сумма цифр: " + sum);
  
         System.out.println("\n4. Вывод чисел в несколько строк");
         int numberA = 1;
-        int numberB = 24;
+        int numberB = 23;
         int counter = 0;
-        int zero = 0;
         int i;
         for (i = numberA; i <= numberB; i += 2) {
-            if (counter % 5 != 0) {
-                System.out.printf("%2d ", i);
-            }
             if (counter % 5 == 0) {
                 System.out.println(" ");
-                System.out.printf("%2d ", i);
-            }           
+            }    
+            System.out.printf("%2d ", i);
             counter++;
         }
         if (counter % 5 != 0) {
             do {
                 counter++;
-                System.out.printf("%2d ", zero);
+                System.out.printf("%2d ", 0);
             } while (counter % 5 != 0);
         }
             
         System.out.println("\n\n5. Проверка количества двоек числа на четность/нечетность");
-        int numberResearch = 3242592;
-        int quantityTwo = 0;
-        System.out.print("В " + numberResearch);
-        while (numberResearch > 0) {  
-            int numberResearchTemporary = numberResearch % 10; 
-            if (numberResearchTemporary == 2) {
-                quantityTwo++;
+        workNumber = 3242592;
+        int twosCount = 0;
+        System.out.print("В " + workNumber);
+        while (workNumber > 0) {  
+            if (workNumber % 10 == 2) {
+                twosCount++;
             }
-            numberResearch /= 10;
+            workNumber /= 10;
         }
-        boolean oddOreverseNumberen = (quantityTwo % 2 == 0);
-        String oddOreverseNumberenString;
-        if (oddOreverseNumberen) {
-            oddOreverseNumberenString = " чётное";
-        } else {
-            oddOreverseNumberenString = " нечётное";
+        boolean oddOreverseNumber;
+        String oddOrEven = " нечётное";
+        if (oddOreverseNumber = (twosCount % 2 == 0)) {
+            oddOrEven = " чётное";
         }
-        System.out.println(oddOreverseNumberenString + " количество двоек — " + quantityTwo);
+        System.out.println(oddOrEven + " количество двоек — " + twosCount);
         
-        System.out.println("\n6. Отображение геометрических фигур");
+        System.out.println("\n6. Отображение геометрических фигур: ");
         for (int square = 1; square < 6; square++) {
             System.out.println("**********");
         }
         System.out.println();
-        int triangle;
-        for (triangle = 5; triangle > 0; triangle--) {
-            for (int j = triangle; j > 0; j--) {
+    
+        int triangleX = 5; 
+        int triangleY;      
+        while (triangleX > 0) {
+            triangleY = triangleX;
+            while (triangleY > 0) {
                 System.out.print("#");
+                triangleY--;
+                if (triangleY == 0) {
+                    System.out.println();
+                }
             }
-            System.out.println();
+            triangleX--; 
         }
         System.out.println();
+         
         String str = "$";
-        
         i = 0;
         do {
             System.out.println(str.repeat(++i));
@@ -130,41 +128,34 @@ public class CyclesTheme {
         
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.println("DECIMAL   CHARACTER   DESCRIPTION");
-        char asciiSymbol = 33;
         for (i = 33; i <= 47; i += 2) {
-            String template = ("  " + (int) asciiSymbol + "          %c      " + "%-1s ");
-            System.out.println(String.format(template, asciiSymbol, (Character.getName(asciiSymbol))));
-            asciiSymbol += 2;
+            String template = ("  " + (int) i + "          %c            " + "%-10s " + '\n');
+            System.out.printf(template, i, (Character.getName(i)));
         }
-        asciiSymbol = 98;
         for (i = 98; i <= 122; i += 2) {
-            String template = ("%4d " + "%10c " + "     %-30s " + '\n');
-            System.out.printf(String.format(template, (int) asciiSymbol, asciiSymbol, 
-                    (Character.getName(asciiSymbol))));
-            asciiSymbol += 2;
+            String template = ("%4d " + "%10c " + "           %-10s " + '\n');
+            System.out.printf(template, (int) i, i, (Character.getName(i)));
         }
         
         System.out.println("\n8. Проверка, является ли число палиндромом");
-     
-        int number = 1234321;
+        workNumber = 1234321;
+        int remainder = 0;
         int reverseNumber = 0;
-        int temporaryVariable = 0;
-        int originalNumber = number;
-
-        while (number != 0) {
-            reverseNumber = number % 10;
-            temporaryVariable = temporaryVariable * 10 + reverseNumber;
-            number /= 10;
+        int originalworkNumber = workNumber;
+        while (workNumber > 0) {
+            remainder = workNumber % 10;
+            reverseNumber = reverseNumber * 10 + remainder;
+            workNumber /= 10;
         }
-        if (originalNumber == temporaryVariable) {
-            System.out.println("число " + originalNumber + " является палиндромом");
+        if (originalworkNumber == reverseNumber) {
+            System.out.println("число " + originalworkNumber + " является палиндромом");
         } else {
-            System.out.println("число " + originalNumber + " не является палиндромом");
+            System.out.println("число " + originalworkNumber + " не является палиндромом");
         }
-            
+                 
         System.out.println("\n9. Проверка, является ли число счастливым");
-        number = 123321;
-        originalNumber = number;
+        int number = 123321;
+        int originalNumber = number;
         int firstNumber = 0;
         int secondNumber = 0;
         counter = 0;
@@ -186,7 +177,7 @@ public class CyclesTheme {
         }
         System.out.println("Число " + originalNumber + happyWord + "счастливым");
         System.out.println("Сумма цифр ABC = " + firstNumber + " , а сумма DEF = " + secondNumber);
-        
+         
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
         
         int k = 0;
