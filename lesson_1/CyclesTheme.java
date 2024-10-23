@@ -21,27 +21,21 @@ public class CyclesTheme {
         int a = -3;
         int b = 5;
         int c = 10;
-        int maxNumber = 0;
-        int minNumber = 0;
-
-        if (a > b && a > c) {
-            maxNumber = a;
-            if (b > c) {
-                minNumber = c;
-            } else {
-                minNumber = b;
-            }
-        }
-        if (b > a && b > c) {
+        int maxNumber = a;
+        int minNumber = b;
+        
+        if (maxNumber < b) {
             maxNumber = b;
-            if (a > c) {
-                minNumber = c;
-            } else {
-                minNumber = a;
-            }
-        } else {
+        } 
+        if (maxNumber < c) {
             maxNumber = c;
+        }
+        
+        if (minNumber > a) {
             minNumber = a;
+        } 
+        if (minNumber > c) {
+            minNumber = c;
         }
         System.out.println("max: " + maxNumber + " min: " + minNumber);
         for (int i = (minNumber + 1); i < maxNumber; i++) {
@@ -64,8 +58,7 @@ public class CyclesTheme {
         int numberA = 1;
         int numberB = 23;
         int counter = 0;
-        int i;
-        for (i = numberA; i <= numberB; i += 2) {
+        for (int i = numberA; i <= numberB; i += 2) {
             if (counter % 5 == 0) {
                 System.out.println(" ");
             }    
@@ -89,9 +82,8 @@ public class CyclesTheme {
             }
             workNumber /= 10;
         }
-        boolean oddOreverseNumber;
         String oddOrEven = " нечётное";
-        if (oddOreverseNumber = (twosCount % 2 == 0)) {
+        if (twosCount % 2 == 0) {
             oddOrEven = " чётное";
         }
         System.out.println(oddOrEven + " количество двоек — " + twosCount);
@@ -102,10 +94,9 @@ public class CyclesTheme {
         }
         System.out.println();
     
-        int triangleX = 5; 
-        int triangleY;      
+        int triangleX = 5;
         while (triangleX > 0) {
-            triangleY = triangleX;
+            int triangleY = triangleX;
             while (triangleY > 0) {
                 System.out.print("#");
                 triangleY--;
@@ -118,32 +109,32 @@ public class CyclesTheme {
         System.out.println();
          
         String str = "$";
-        i = 0;
+        workNumber = 0;
         do {
-            System.out.println(str.repeat(++i));
-        } while (i < 3);
+            System.out.println(str.repeat(++workNumber));
+        } while (workNumber < 3);
         do {
-            System.out.println(str.repeat(--i));
-        } while (i > 1);
+            System.out.println(str.repeat(--workNumber));
+        } while (workNumber > 1);
         
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.println("DECIMAL   CHARACTER   DESCRIPTION");
+        int i;
         for (i = 33; i <= 47; i += 2) {
-            String template = ("  " + (int) i + "          %c            " + "%-10s " + '\n');
+            String template = ("  " + (int) i + "          %-13c" + "%s " + '\n');
             System.out.printf(template, i, (Character.getName(i)));
         }
         for (i = 98; i <= 122; i += 2) {
-            String template = ("%4d " + "%10c " + "           %-10s " + '\n');
+            String template = ("%4d " + "%10c " + "           %s " + '\n');
             System.out.printf(template, (int) i, i, (Character.getName(i)));
         }
         
         System.out.println("\n8. Проверка, является ли число палиндромом");
         workNumber = 1234321;
-        int remainder = 0;
         int reverseNumber = 0;
         int originalworkNumber = workNumber;
         while (workNumber > 0) {
-            remainder = workNumber % 10;
+            int remainder = workNumber % 10;
             reverseNumber = reverseNumber * 10 + remainder;
             workNumber /= 10;
         }
@@ -154,48 +145,47 @@ public class CyclesTheme {
         }
                  
         System.out.println("\n9. Проверка, является ли число счастливым");
-        int number = 123321;
-        int originalNumber = number;
-        int firstNumber = 0;
-        int secondNumber = 0;
+        workNumber = 123321;
+        int leftPartNumber = 0;
+        int leftPartNumberString = workNumber / 1000;
+        int rightPartNumberString = workNumber % 1000;
+        int rightPartNumber = 0;
+        int workNumberCopy = workNumber;
         counter = 0;
-        while (number != 0) {
-            int singleNumber = number % 10;
-            number = number / 10;
+        while (workNumber != 0) {
+            int digit = workNumber % 10;
+            workNumber /= 10;
             if (counter < 3) {
-                secondNumber += singleNumber;
+                rightPartNumber += digit;
             } else {
-                firstNumber += singleNumber;
+                leftPartNumber += digit;
             }
             counter++;
         }
-        String happyWord;
-        if (firstNumber == secondNumber) {
+        String happyWord = " не является ";
+        if (leftPartNumber == rightPartNumber) {
             happyWord = " является ";
-        } else {
-            happyWord = " не является ";
-        }
-        System.out.println("Число " + originalNumber + happyWord + "счастливым");
-        System.out.println("Сумма цифр ABC = " + firstNumber + " , а сумма DEF = " + secondNumber);
-         
+        } 
+        System.out.println("Число " + workNumberCopy + happyWord + "счастливым");
+        System.out.println("Сумма цифр " + leftPartNumberString + " = " + leftPartNumber + 
+                " , а сумма " + rightPartNumberString + " = " + rightPartNumber);
+
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
-        
-        int k = 0;
         for (i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
+                int k = 0;
                 k = i * j;
                 if (j == 1) {
-                    System.out.printf("%5d", k);
-                    System.out.print("|");
+                    System.out.printf("%5d|", k);
                 } else {
                     System.out.printf("%5d", k);
                 }
             }
             if (i == 1) {
-                System.out.println();
-                System.out.print("_______________________________________________");
+                System.out.print("\n_______________________________________________");
             }
             System.out.println();
+        
         }
     }
 }
