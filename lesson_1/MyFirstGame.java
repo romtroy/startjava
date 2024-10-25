@@ -13,8 +13,7 @@ public class MyFirstGame {
             } else if (numberUser < digiteComputer) {
                 System.out.println(numberUser + " - меньше того, что загадал компьютер");
             }           
-        } while (digiteComputer != numberUser); {
-            System.out.println("Вы угадали число: " + numberUser);
-        }
+        } while (digiteComputer != numberUser); 
+        System.out.println("Вы угадали число: " + numberUser);
     }
 }
