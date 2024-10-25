@@ -15,7 +15,8 @@ public class CyclesTheme {
             startRange++;
         } while (startRange <= endRange);
         
-        System.out.println(" сумма четных чисел = " + sumEvenNumbers + ", а нечетных =  " + sumOddNumbers);
+        System.out.println(" сумма четных чисел = " + sumEvenNumbers + ", а нечетных =  " + 
+                sumOddNumbers);
 
         System.out.println("\n2. Вывод чисел в порядке убывания");
         int a = -3;
@@ -119,12 +120,11 @@ public class CyclesTheme {
         
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.println("DECIMAL   CHARACTER   DESCRIPTION");
-        int i;
-        for (i = 33; i <= 47; i += 2) {
+        for (int i = 33; i <= 47; i += 2) {
             String template = ("  " + (int) i + "          %-13c" + "%s " + '\n');
             System.out.printf(template, i, (Character.getName(i)));
         }
-        for (i = 98; i <= 122; i += 2) {
+        for (int i = 98; i <= 122; i += 2) {
             String template = ("%4d " + "%10c " + "           %s " + '\n');
             System.out.printf(template, (int) i, i, (Character.getName(i)));
         }
@@ -132,46 +132,45 @@ public class CyclesTheme {
         System.out.println("\n8. Проверка, является ли число палиндромом");
         workNumber = 1234321;
         int reverseNumber = 0;
-        int originalworkNumber = workNumber;
+        int workNumberCopy = workNumber;
         while (workNumber > 0) {
             int remainder = workNumber % 10;
             reverseNumber = reverseNumber * 10 + remainder;
             workNumber /= 10;
         }
-        if (originalworkNumber == reverseNumber) {
-            System.out.println("число " + originalworkNumber + " является палиндромом");
+        if (workNumberCopy == reverseNumber) {
+            System.out.println("число " + workNumberCopy + " является палиндромом");
         } else {
-            System.out.println("число " + originalworkNumber + " не является палиндромом");
+            System.out.println("число " + workNumberCopy + " не является палиндромом");
         }
                  
         System.out.println("\n9. Проверка, является ли число счастливым");
         workNumber = 123321;
-        int leftPartNumber = 0;
-        int leftPartNumberString = workNumber / 1000;
-        int rightPartNumberString = workNumber % 1000;
-        int rightPartNumber = 0;
-        int workNumberCopy = workNumber;
+        workNumberCopy = workNumber;
+        int leftHalf = 0;
+        int firstThreeDigits = workNumber / 1000;
+        int secondThreeDigits = workNumber % 1000;
+        int rightHalf = 0;
         counter = 0;
-        while (workNumber != 0) {
+        for (; workNumber > 0; workNumber /= 10) {
             int digit = workNumber % 10;
-            workNumber /= 10;
             if (counter < 3) {
-                rightPartNumber += digit;
+                rightHalf += digit;
             } else {
-                leftPartNumber += digit;
+                leftHalf += digit;
             }
             counter++;
         }
-        String happyWord = " не является ";
-        if (leftPartNumber == rightPartNumber) {
-            happyWord = " является ";
+        String state = " не является ";
+        if (leftHalf == rightHalf) {
+            state = " является ";
         } 
-        System.out.println("Число " + workNumberCopy + happyWord + "счастливым");
-        System.out.println("Сумма цифр " + leftPartNumberString + " = " + leftPartNumber + 
-                " , а сумма " + rightPartNumberString + " = " + rightPartNumber);
+        System.out.println("Число " + workNumberCopy + state + "счастливым");
+        System.out.println("Сумма цифр " + firstThreeDigits + " = " + leftHalf + " , а сумма " +
+                 secondThreeDigits + " = " + rightHalf);
 
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
-        for (i = 1; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
                 int k = 0;
                 k = i * j;
