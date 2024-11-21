@@ -1,25 +1,42 @@
 import java.util.Scanner;
 
 public class CalculatorTest {
-
+    
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
-        calc.firstNumber(); //вызываем метод ввода
-        int number1 = scan.nextInt();
-        calc.setNumber1(number1); // делаем 1ю цифру
         
-        calc.sighMath();
-        char sign = scan.next().charAt(0);
-        calc.setSign(sign);    
-        calc.secondNumber(); //вызываем метод ввода
-        int number2 = scan.nextInt();
-        calc.setNumber2(number2); // делаем 2ю цифру
+        String signContinue = "yes";
         
-        calc.count(); //вызываем метод расчёта
-        // почему здесь не работает console.nextLine() или scan.nextLine() ???
-        String signContinue = scan.next();
-        calc.setSignContinue(signContinue);
-        calc.continueYesOrNot();
-    }
+        do {
+            calc.firstNumber(); //вызываем метод ввода
+            int number1 = scan.nextInt();
+            calc.setNumber1(number1); // делаем 1ю цифру
+            
+            calc.sighMath();
+            char sign = scan.next().charAt(0);
+            while((sign != '+') && (sign != '-') && (sign != '*') && (sign != '/') && (sign != '^') && (sign != '%')) {
+                System.out.println("Ошибка: операция " + sign + " не поддерживается ");
+                calc.sighMath();
+                sign = scan.next().charAt(0);
+            }
+            calc.setSign(sign);
+            
+            calc.secondNumber(); //вызываем метод ввода
+            int number2 = scan.nextInt();
+            calc.setNumber2(number2); // делаем 2ю цифру
+            
+            calc.calculate(); //вызываем метод расчёта
+            //String signContinue = scan.next();
+            System.out.println("Хотите продолжить вычисления? [yes/no] ");
+            signContinue = scan.next();
+            while(!signContinue.equals("yes") && !signContinue.equals("no")) {
+                System.out.println("Хотите продолжить вычисления? [yes/no] ");
+                signContinue = scan.next();
+            }
+        } while(signContinue.equals("yes") || !signContinue.equals("no"));
+
+    }   
 }
+
+
