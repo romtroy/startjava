@@ -1,22 +1,13 @@
 public class Calculator {
- 
+     
     private int number1;
     private int number2;
     private char sign;
-    private int result;
-    
-    public void firstNumber() {
-        System.out.print("Введите первое число: ");
-    }
-    
+   
     public void sighMath() {
         System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
-    }
-    
-    public void secondNumber() {
-        System.out.print("Введите второе число: ");
-    }
-    
+    }    
+   
     public void setNumber1(int number1) {
         this.number1 = number1;     
     }
@@ -34,6 +25,7 @@ public class Calculator {
     }
     
     public void calculate() {
+        int result = 0;
         switch (sign) {
             case '+':
                 result = number1 + number2;
@@ -46,8 +38,7 @@ public class Calculator {
                 break;
             case '/':
                 if (number2 == 0) {
-                    System.out.println("Ошибка: деление на ноль запрещено");
-                    break;
+                    throw new IllegalArgumentException("Ошибка: деление на ноль запрещено");
                 } else { 
                     result = number1 / number2;
                 }
@@ -65,3 +56,5 @@ public class Calculator {
         System.out.println(number1 + " " + sign + " " + number2 + " = " + result);
     }
 }
+
+

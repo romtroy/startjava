@@ -8,7 +8,7 @@ public class CalculatorTest {
         String signContinue = "yes";
         
         do {
-            calc.firstNumber(); // вызываем метод ввода
+            System.out.print("Введите первое число: ");
             int number1 = scan.nextInt();
             calc.setNumber1(number1); // делаем 1ю цифру
             
@@ -21,7 +21,7 @@ public class CalculatorTest {
             }
             calc.setSign(sign);
             
-            calc.secondNumber(); // вызываем метод ввода
+            System.out.print("Введите второе число: ");
             int number2 = scan.nextInt();
             calc.setNumber2(number2); // делаем 2ю цифру
             
@@ -32,6 +32,6 @@ public class CalculatorTest {
                 System.out.println("Хотите продолжить вычисления? [yes/no] ");
                 signContinue = scan.next();
             }
-        } while (signContinue.equals("yes") || !signContinue.equals("no"));
-    }   
+        } while (!signContinue.equals("no"));
+    }
 }
