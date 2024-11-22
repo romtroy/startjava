@@ -4,13 +4,11 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
-        
         String signContinue = "yes";
         
         do {
             System.out.print("Введите первое число: ");
-            int number1 = scan.nextInt();
-            calc.setNumber1(number1); 
+            calc.setNumber1(scan.nextInt());
             
             do {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
@@ -23,8 +21,7 @@ public class CalculatorTest {
             } while (calc.checkSign());
             
             System.out.print("Введите второе число: ");
-            int number2 = scan.nextInt();
-            calc.setNumber2(number2); 
+            calc.setNumber2(scan.nextInt());
             calc.calculate(); 
 
             do {
