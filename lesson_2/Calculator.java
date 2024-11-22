@@ -1,12 +1,8 @@
 public class Calculator {
-     
     private int number1;
     private int number2;
     private char sign;
-   
-    public void sighMath() {
-        System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
-    }    
+    private boolean checkSignT;
    
     public void setNumber1(int number1) {
         this.number1 = number1;     
@@ -24,6 +20,14 @@ public class Calculator {
         this.sign = sign;     
     }
     
+    boolean checkSign() {
+        if ((sign != '+') && (sign != '-') && (sign != '*') && (sign != '/') && (sign != '^') && (sign != '%')) {
+            return true;
+        } else { 
+            return false;
+        }
+    }
+
     public void calculate() {
         int result = 0;
         switch (sign) {
@@ -39,9 +43,8 @@ public class Calculator {
             case '/':
                 if (number2 == 0) {
                     throw new IllegalArgumentException("Ошибка: деление на ноль запрещено");
-                } else { 
-                    result = number1 / number2;
-                }
+                } 
+                result = number1 / number2;
                 break;
             case '^':
                 result = 1;
@@ -56,5 +59,3 @@ public class Calculator {
         System.out.println(number1 + " " + sign + " " + number2 + " = " + result);
     }
 }
-
-

@@ -10,28 +10,27 @@ public class CalculatorTest {
         do {
             System.out.print("Введите первое число: ");
             int number1 = scan.nextInt();
-            calc.setNumber1(number1); // делаем 1ю цифру
+            calc.setNumber1(number1); 
             
-            calc.sighMath();
-            char sign = scan.next().charAt(0);
-            while ((sign != '+') && (sign != '-') && (sign != '*') && (sign != '/') && (sign != '^') && (sign != '%')) {
-                System.out.println("Ошибка: операция " + sign + " не поддерживается ");
-                calc.sighMath();
-                sign = scan.next().charAt(0);
-            }
-            calc.setSign(sign);
+            do {
+                System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
+                char sign = scan.next().charAt(0);
+                calc.setSign(sign);
+                
+                if (calc.checkSign()) {
+                    System.out.println("Ошибка: операция " + sign + " не поддерживается ");
+                }
+            } while (calc.checkSign());
             
             System.out.print("Введите второе число: ");
             int number2 = scan.nextInt();
-            calc.setNumber2(number2); // делаем 2ю цифру
-            
-            calc.calculate(); // вызываем метод расчёта
-            System.out.println("Хотите продолжить вычисления? [yes/no] ");
-            signContinue = scan.next();
-            while (!signContinue.equals("yes") && !signContinue.equals("no")) {
+            calc.setNumber2(number2); 
+            calc.calculate(); 
+
+            do {
                 System.out.println("Хотите продолжить вычисления? [yes/no] ");
                 signContinue = scan.next();
-            }
+            } while (!signContinue.equals("yes") && !signContinue.equals("no"));
         } while (!signContinue.equals("no"));
     }
 }
