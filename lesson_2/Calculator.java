@@ -11,17 +11,13 @@ public class Calculator {
         this.number2 = number2;     
     }
     
-    public char getSign() {
-        return sign;
-    }
-    
     public void setSign(char sign) {
         this.sign = sign;     
     }
 
     public void calculate() {
         if (sign == '/' && number2 == 0) {
-            throw new IllegalArgumentException("Ошибка: деление на ноль запрещено !");
+            throw new IllegalArgumentException("Ошибка: деление на ноль запрещено!");
         }
         int result = 0;
         switch (sign) {

@@ -5,6 +5,7 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
         String signContinue = "yes";
+        char sign;
         
         do {
             System.out.print("Введите первое число: ");
@@ -12,13 +13,13 @@ public class CalculatorTest {
             
             do {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
-                char sign = scan.next().charAt(0);
-                calc.setSign(sign);
-                
+                sign = scan.next().charAt(0);
+                                
                 if (!isValidSign(sign)) {
                     System.out.println("Ошибка: операция " + sign + " не поддерживается");
                 }
-            } while (!isValidSign(calc.getSign()));
+            } while (!isValidSign(sign));
+            calc.setSign(sign);
             
             System.out.print("Введите второе число: ");
             calc.setNumber2(scan.nextInt());
