@@ -15,10 +15,10 @@ public class CalculatorTest {
                 char sign = scan.next().charAt(0);
                 calc.setSign(sign);
                 
-                if (calc.checkSign()) {
-                    System.out.println("Ошибка: операция " + sign + " не поддерживается ");
+                if (!isValidSign(sign)) {
+                    System.out.println("Ошибка: операция " + sign + " не поддерживается");
                 }
-            } while (calc.checkSign());
+            } while (!isValidSign(calc.getSign()));
             
             System.out.print("Введите второе число: ");
             calc.setNumber2(scan.nextInt());
@@ -29,5 +29,9 @@ public class CalculatorTest {
                 signContinue = scan.next();
             } while (!signContinue.equals("yes") && !signContinue.equals("no"));
         } while (!signContinue.equals("no"));
+    }
+    
+    static boolean isValidSign(char sign) {
+        return (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^' || sign == '%');
     }
 }
