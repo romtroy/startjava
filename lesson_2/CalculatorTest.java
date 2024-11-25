@@ -11,16 +11,17 @@ public class CalculatorTest {
             System.out.print("Введите первое число: ");
             calc.setNumber1(scan.nextInt());
             
-            do {
+            for (;;) {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
                 sign = scan.next().charAt(0);
                                 
                 if (!isValidSign(sign)) {
                     System.out.println("Ошибка: операция " + sign + " не поддерживается");
+                } else {
+                    break;
                 }
-            } while (!isValidSign(sign));
+            }            
             calc.setSign(sign);
-            
             System.out.print("Введите второе число: ");
             calc.setNumber2(scan.nextInt());
             calc.calculate(); 
