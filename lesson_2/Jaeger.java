@@ -1,6 +1,6 @@
 public class Jaeger {
     private String modelName;
-    private String origin;
+    private String origin = "USA";
     private float height;
     private int speed;
     
@@ -14,16 +14,11 @@ public class Jaeger {
     public Jaeger() {
     }
 
-    @Override
-        public String toString() {
-        return String.format("modelName: %s; origin: %s; height: %.2f; speed: %s", modelName.toString(), origin.toString(), height, speed);
-    }
-
     public String getModelName() {
         return modelName; 
     }
     
-    void setModelName(String modelName) {
+    public void setModelName(String modelName) {
         this.modelName = modelName;
     }
     
@@ -31,7 +26,7 @@ public class Jaeger {
         return origin; 
     }
     
-    void setOrigin(String origin) {
+    public void setOrigin(String origin) {
         this.origin = origin;
     }
     
@@ -39,7 +34,7 @@ public class Jaeger {
         return height; 
     }
     
-    void setHeight(float height) {
+    public void setHeight(float height) {
         this.height = height;
     }
     
@@ -47,12 +42,17 @@ public class Jaeger {
         return speed; 
     }
     
-    void setSpeed(int speed) {
+    public void setSpeed(int speed) {
         this.speed = speed;
     }
     
     public boolean drift() {
         System.out.println("drift!!!");
         return true; 
+    }
+    
+    @Override
+    public String toString() {
+    return String.format("modelName: %s; origin: %s; height: %.2f; speed: %s", modelName.toString(), origin.toString(), height, speed);
     }
 }
