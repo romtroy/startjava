@@ -1,6 +1,6 @@
 public class Jaeger {
     private String modelName;
-    private String origin = "USA";
+    private String origin;
     private float height;
     private int speed;
     
@@ -49,10 +49,5 @@ public class Jaeger {
     public boolean drift() {
         System.out.println("drift!!!");
         return true; 
-    }
-    
-    @Override
-    public String toString() {
-    return String.format("modelName: %s; origin: %s; height: %.2f; speed: %s", modelName.toString(), origin.toString(), height, speed);
     }
 }

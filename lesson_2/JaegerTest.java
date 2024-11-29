@@ -1,16 +1,22 @@
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger jaegerOne = new Jaeger();
-        Jaeger jaegerTwo = new Jaeger("Acid Geisha", "Japan", 55.4f, 4);
-        
+                
         jaegerOne.setModelName("Apex");
         jaegerOne.setHeight(88f);
         jaegerOne.setSpeed(5);
-        System.out.print("modelName: " + jaegerOne.getModelName() + ", ");
-        System.out.print("origin: " + jaegerOne.getOrigin() + ", ");
-        System.out.print("height: " + jaegerOne.getHeight() + ", ");
-        System.out.println("speed: " + jaegerOne.getSpeed());
-        System.out.println(jaegerTwo);
+        
+        System.out.println("modelName: " + jaegerOne.getModelName() + "; " + 
+                "origin: " + jaegerOne.getOrigin() + "; " +
+                "height: " + jaegerOne.getHeight() + "; " +
+                "speed: " + jaegerOne.getSpeed());
+        
+        Jaeger jaegerTwo = new Jaeger("Acid Geisha", "Japan", 55.4f, 4);
+        System.out.println("modelName: " + jaegerTwo.getModelName() + "; " +
+                "origin: " + jaegerTwo.getOrigin() + "; " +
+                "height: " + jaegerTwo.getHeight() + "; " +
+                "speed: " + jaegerTwo.getSpeed());
+        
         jaegerOne.drift();
     }
 }
