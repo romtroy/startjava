@@ -1,21 +1,20 @@
 public class Player {
     private String name;
-    private int playerVariant;
+    private int variant;
     
     public Player(String name) {
         this.name = name;
-        // this.playerVariant = playerVariant;
     }
     
     public String getName() {
         return name;
     }
 
-    public int getPlayerVariant() {
-        return playerVariant;
+    public int getVariant() {
+        return variant;
     }
    
-    public void setPlayerVariant(int playerVariant) {
-        this.playerVariant = playerVariant;
+    public void setVariant(int variant) {
+        this.variant = variant;
     }
 }

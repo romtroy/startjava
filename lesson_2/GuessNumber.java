@@ -3,46 +3,47 @@ import java.util.Scanner;
 public class GuessNumber {
     private Player player1;
     private Player player2;
-    private boolean isSomeonGuess = false;
-    private int digitComputer = (int) (Math.random() * 100) + 1;
+    private int secretNum;
     
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
     
-    public void playGameLogic(Scanner scan) {
-        while (!isSomeonGuess) {
-            player1.setPlayerVariant(getValidInput(player1, scan));
-            player2.setPlayerVariant(getValidInput(player2, scan));
+    public void play(Scanner scan) {
+        secretNum = (int) (Math.random() * 100) + 1;
+        while (true) {
+            player1.setVariant(getValidPlayerNumber(player1, scan));
+            player2.setVariant(getValidPlayerNumber(player2, scan));
 
-            System.out.println("Загаданное число: " + digitComputer);
-            if (player1.getPlayerVariant() == digitComputer) {
+            System.out.println("Загаданное число: " + secretNum);
+            if (player1.getVariant() == secretNum) {
                 System.out.println(player1.getName() + " отгадал число!");
-                isSomeonGuess = true;
-            } else if (player2.getPlayerVariant() == digitComputer) {
+                break;
+            } else if (player2.getVariant() == secretNum) {
                 System.out.println(player2.getName() + " отгадал число!");
-                isSomeonGuess = true;
+                break;
             } else {
                 System.out.println("Никто не отгадал.");
             }
-
-            if (isSomeonGuess) {
-                digitComputer = (int) (Math.random() * 100) + 1;
-            }
         }
-        isSomeonGuess = false;
     }
 
-    private int getValidInput(Player player, Scanner scan) {
-        int variant;
+    private int getValidPlayerNumber(Player player, Scanner scan) {
+        int playerNumber;
         do {
             System.out.print("Введите число между 1 и 100 для игрока " + player.getName() + ": ");
-            variant = scan.nextInt();
-            if (variant < 1 || variant > 100) {
+            playerNumber = scan.nextInt();
+            if (playerNumber < 1 || playerNumber > 100) {
                 System.out.println("Ошибочное значение! В игре разрешен ввод чисел в отрезке [1, 100].");
             }
-        } while (variant < 1 || variant > 100);
-        return variant;
+        } while (playerNumber < 1 || playerNumber > 100);
+        
+        if (playerNumber > secretNum) {
+            System.out.println(playerNumber + " - больше того, что загадал компьютер");
+        } else if (playerNumber < secretNum) {
+            System.out.println(playerNumber + " - меньше того, что загадал компьютер");
+        }           
+        return playerNumber;
     }
 }

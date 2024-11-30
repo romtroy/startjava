@@ -4,6 +4,9 @@ public class Jaeger {
     private float height;
     private int speed;
     
+    public Jaeger() {
+    }
+    
     public Jaeger(String modelName, String origin, float height, int speed) {
         this.modelName = modelName;
         this.origin = origin;
@@ -11,9 +14,6 @@ public class Jaeger {
         this.speed = speed;
     }
     
-    public Jaeger() {
-    }
-
     public String getModelName() {
         return modelName; 
     }
