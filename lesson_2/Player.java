@@ -1,6 +1,6 @@
 public class Player {
     private String name;
-    private int variant;
+    private int number;
     
     public Player(String name) {
         this.name = name;
@@ -10,11 +10,11 @@ public class Player {
         return name;
     }
 
-    public int getVariant() {
-        return variant;
+    public int getNumber() {
+        return number;
     }
    
-    public void setVariant(int variant) {
-        this.variant = variant;
+    public void setNumber(int number) {
+        this.number = number;
     }
 }

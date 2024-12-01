@@ -12,15 +12,20 @@ public class GuessNumber {
     
     public void play(Scanner scan) {
         secretNum = (int) (Math.random() * 100) + 1;
+        System.out.println("Загаданное число: " + secretNum);
         while (true) {
-            player1.setVariant(getValidPlayerNumber(player1, scan));
-            player2.setVariant(getValidPlayerNumber(player2, scan));
-
-            System.out.println("Загаданное число: " + secretNum);
-            if (player1.getVariant() == secretNum) {
+            player1.setNumber(inputNumber(player1, scan));
+            checkNumber(player1);
+           
+            if (player1.getNumber() == secretNum) {
                 System.out.println(player1.getName() + " отгадал число!");
                 break;
-            } else if (player2.getVariant() == secretNum) {
+            }
+            
+            player2.setNumber(inputNumber(player2, scan));
+            checkNumber(player2);
+            
+            if (player2.getNumber() == secretNum) {
                 System.out.println(player2.getName() + " отгадал число!");
                 break;
             } else {
@@ -29,7 +34,7 @@ public class GuessNumber {
         }
     }
 
-    private int getValidPlayerNumber(Player player, Scanner scan) {
+    private int inputNumber(Player player, Scanner scan) {
         int playerNumber;
         do {
             System.out.print("Введите число между 1 и 100 для игрока " + player.getName() + ": ");
@@ -38,12 +43,15 @@ public class GuessNumber {
                 System.out.println("Ошибочное значение! В игре разрешен ввод чисел в отрезке [1, 100].");
             }
         } while (playerNumber < 1 || playerNumber > 100);
-        
+        return playerNumber;
+    }
+
+    private void checkNumber(Player player) {
+        int playerNumber = player.getNumber();
         if (playerNumber > secretNum) {
             System.out.println(playerNumber + " - больше того, что загадал компьютер");
         } else if (playerNumber < secretNum) {
             System.out.println(playerNumber + " - меньше того, что загадал компьютер");
-        }           
-        return playerNumber;
+        }
     }
 }
