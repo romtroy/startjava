@@ -36,13 +36,13 @@ public class GuessNumber {
 
     private boolean isGuessed(Player player) {
         int playerNumber = player.getNumber();
-        if (playerNumber > secretNum) {
+        if (playerNumber == secretNum) {
+            System.out.println(player.getName() + " отгадал число!");
+            return true;
+        } else if (playerNumber > secretNum) {
             System.out.println(playerNumber + " - больше того, что загадал компьютер");
         } else if (playerNumber < secretNum) {
             System.out.println(playerNumber + " - меньше того, что загадал компьютер");
-        } else {
-            System.out.println(player.getName() + " отгадал число!");
-            return true;
         }
         return false;
     }
