@@ -1,5 +1,4 @@
 public class TaskMethods {
-
     public static void main(String[] args) {
         TaskMethodsNoBoolean part1 = new TaskMethodsNoBoolean();
         part1.findMostLongWord();
