@@ -14,13 +14,12 @@ public class CalculatorTest {
             while (true) {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
                 sign = scan.next().charAt(0);
-                calc.setSign(sign);             
                 if (isValidSign(sign)) {
                     break;
                 }
                 System.out.println("Ошибка: операция " + sign + " не поддерживается");
             }              
-        
+            calc.setSign(sign);
             System.out.print("Введите второе число: ");
             calc.setNumber2(scan.nextInt());
             calc.calculate(); 
