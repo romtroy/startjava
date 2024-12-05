@@ -1,10 +1,10 @@
 public class MethodNamesTheme {
     public static void main(String[] args) {
-        callNoBooleanMethods(); 
-        callBooleanMethods(); 
+        doNoBooleanMethods(); 
+        doBooleanMethods(); 
     }
     
-    private static void callNoBooleanMethods() {
+    private static void doNoBooleanMethods() {
         NoBooleanMethods nonBm = new NoBooleanMethods();
         nonBm.findLongestWord();
         nonBm.chooseMenuItem();
@@ -22,7 +22,7 @@ public class MethodNamesTheme {
         nonBm.findBookByAuthor();
     }
     
-    private static void callBooleanMethods() {
+    private static void doBooleanMethods() {
         BooleanMethods bm = new BooleanMethods();
         System.out.println(bm.isContinue());
         System.out.println(bm.isDeleted());
