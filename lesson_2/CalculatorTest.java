@@ -5,12 +5,11 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         Scanner scan = new Scanner(System.in);
         String signContinue = "yes";
-        char sign;
-        
+       
         do {
             System.out.print("Введите первое число: ");
             calc.setNumber1(scan.nextInt());
-            
+            char sign;
             while (true) {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
                 sign = scan.next().charAt(0);
@@ -31,7 +30,7 @@ public class CalculatorTest {
         } while (!signContinue.equals("no"));
     }
     
-    static boolean isValidSign(char sign) {
+    private static boolean isValidSign(char sign) {
         return (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^' || sign == '%');
     }
 }
