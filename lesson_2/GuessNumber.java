@@ -39,11 +39,12 @@ public class GuessNumber {
         if (playerNumber == secretNum) {
             System.out.println(player.getName() + " отгадал число!");
             return true;
-        } else if (playerNumber > secretNum) {
-            System.out.println(playerNumber + " - больше того, что загадал компьютер");
-        } else if (playerNumber < secretNum) {
-            System.out.println(playerNumber + " - меньше того, что загадал компьютер");
         }
+        if (playerNumber > secretNum) {
+            System.out.println(playerNumber + " - больше того, что загадал компьютер");
+            return false;
+        }
+        System.out.println(playerNumber + " - меньше того, что загадал компьютер");
         return false;
     }
 }
