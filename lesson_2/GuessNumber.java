@@ -42,9 +42,9 @@ public class GuessNumber {
         }
         if (playerNumber > secretNum) {
             System.out.println(playerNumber + " - больше того, что загадал компьютер");
-            return false;
-        }
-        System.out.println(playerNumber + " - меньше того, что загадал компьютер");
+        } else {
+            System.out.println(playerNumber + " - меньше того, что загадал компьютер");
+        } 
         return false;
     }
 }
