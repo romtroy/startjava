@@ -5,7 +5,7 @@ public class MethodNamesTheme {
     }
     
     private static void doNoBooleanMethods() {
-        NoBooleanMethods nonBm = new NoBooleanMethods();
+        NonBooleanMethods nonBm = new NonBooleanMethods();
         nonBm.findLongestWord();
         nonBm.chooseMenuItem();
         nonBm.calculateAverageRating();
