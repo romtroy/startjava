@@ -1,3 +1,5 @@
+package com.startjava.lesson_2.method;
+
 public class BooleanMethods {
     public boolean isContinue() {
         System.out.print(CurrentMethod.getName() + 

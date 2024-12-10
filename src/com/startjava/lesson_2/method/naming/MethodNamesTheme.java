@@ -1,3 +1,5 @@
+package com.startjava.lesson_2.method;
+
 public class MethodNamesTheme {
     public static void main(String[] args) {
         doNoBooleanMethods(); 
