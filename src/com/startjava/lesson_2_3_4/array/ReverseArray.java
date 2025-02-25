@@ -15,17 +15,13 @@ public class ReverseArray {
             return;
         }
 
-        // Вызов метода для отображения массива перед реверсом
         displayArray("   До реверса", firstTaskArr);
 
-        // Вызов метода, выполняющего основную логику (реверс массива)
         arrayReverse(firstTaskArr);
 
-        // Вызов метода для отображения массива после реверса
         displayArray("После реверса", firstTaskArr);
     }
 
-    // Метод для реверса массива
     public static void arrayReverse(int[] firstTaskArr) {
         int left = 0, right = firstTaskArr.length - 1;
         while (left < right) {
@@ -37,7 +33,6 @@ public class ReverseArray {
         }
     }
 
-    // Метод для отображения массива с сообщением
     public static void displayArray(String message, int[] tempFirstTaskArr ) {
         System.out.print("\n" + message + " [ ");
         for (int number : tempFirstTaskArr) {
