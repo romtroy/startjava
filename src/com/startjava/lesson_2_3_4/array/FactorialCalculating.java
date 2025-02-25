@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.array;
 
-
 import java.util.Arrays;
 
 public class FactorialCalculating {
@@ -17,7 +16,6 @@ public class FactorialCalculating {
         workWithFactorials(array2);
         workWithFactorials(array3);
     }
-//test
     private static void workWithFactorials(int[] numbers) {
         if (numbers == null) {
             System.out.println("Ошибка: передан null");
