@@ -1,6 +1,6 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class FactorialCalculating {
     public static void main(String[] args) {
@@ -32,11 +32,8 @@ public class FactorialCalculating {
     }
 
     private static String formatFactorial(int n) {
-        if (n < 0) {
-            return "Ошибка: факториал " + n + "! не определен";
-        } else {
-            return (n + "! = " + factorialExpressionString(n) + " = " + factorialCalc(n));
-        }
+        return (n < 0) ? "Ошибка: факториал " + n + "! не определен" :
+               (n + "! = " + factorialExpressionString(n) + " = " + factorialCalc(n));
     }
 
     private static String factorialExpressionString(int n) {
