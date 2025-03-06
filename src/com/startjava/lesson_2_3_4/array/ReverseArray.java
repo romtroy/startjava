@@ -22,6 +22,9 @@ public class ReverseArray {
             System.out.println("Пустой массив");
             return;
         }
+
+        //System.out.print("   До реверса" + numbers);
+
         displayArray("   До реверса", numbers);
         arrayReverse(numbers);
         displayArray("После реверса", numbers);
