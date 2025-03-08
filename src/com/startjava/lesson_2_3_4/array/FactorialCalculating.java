@@ -33,17 +33,17 @@ public class FactorialCalculating {
 
     private static String formatFactorial(int n) {
         return (n < 0) ? "Ошибка: факториал " + n + "! не определен" :
-               (n + "! = " + factorialExpressionString(n) + " = " + factorialCalc(n));
+               (n + "! = " + factorialViewString(n) + " = " + factorialCalc(n));
     }
 
-    private static String factorialExpressionString(int n) {
+    private static String factorialViewString(int n) {
         if (n == 0) return "1";
-        String expression = "1";
+        String expressionFactorial = "1";
 
         for (int i = 2; i <= n; i++) {
-            expression += " * " + i;
+            expressionFactorial += " * " + i;
         }
-        return expression;
+        return expressionFactorial;
     }
 
     private static long factorialCalc(int n) {
