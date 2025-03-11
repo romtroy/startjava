@@ -2,7 +2,6 @@ package com.startjava.lesson_2_3_4.array;
 
 public class ReverseArray {
     public static void main(String[] args) {
-
         int[] arrayEmpty = {};
         int[] arrayNull = null;
         int[] array3 = {6, 8, 9, 1};
@@ -22,8 +21,7 @@ public class ReverseArray {
             System.out.println("Пустой массив");
             return;
         }
-
-        displayArray("   До реверса:", numbers );
+        displayArray("   До реверса:", numbers);
         reverseArray(numbers);
         displayArray("После реверса:", numbers);
     }
@@ -40,11 +38,14 @@ public class ReverseArray {
         }
     }
 
-    public static void displayArray(String message, int[] tempFirstTaskArr ) {
-        System.out.print("\n" + message + " [ ");
-        for (int number : tempFirstTaskArr) {
-            System.out.print(number + ", ");
+    public static void displayArray(String message, int[] numbers) {
+        System.out.print(message + " [ ");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i]);
+            if (i < numbers.length - 1) {
+                System.out.print(", ");
+            }
         }
-        System.out.print("] ");
+        System.out.println(" ]");
     }
 }
