@@ -3,18 +3,18 @@ package com.startjava.lesson_2_3_4.array;
 public class ReverseArray {
     public static void main(String[] args) {
 
-        int[] arrayEmpty = {};
-        int[] arrayNull = null;
-        int[] array3 = {6, 8, 9, 1};
-        int[] array4 = {13, 8, 5, 3, 2, 1, 1};
+        int[] firstTaskArr1 = {};
+        int[] firstTaskArr2 = null;
+        int[] firstTaskArr3 = {6, 8, 9, 1};
+        int[] firstTaskArr4 = {13, 8, 5, 3, 2, 1, 1};
 
-        checkArray(arrayEmpty);
-        checkArray(arrayNull);
-        checkArray(array3);
-        checkArray(array4);
+        workWithArray(firstTaskArr1);
+        workWithArray(firstTaskArr2);
+        workWithArray(firstTaskArr3);
+        workWithArray(firstTaskArr4);
     }
 
-    private static void checkArray(int[] numbers) {
+    private static void workWithArray(int[] numbers) {
         if (numbers == null) {
             System.out.println("Массив равен null");
             return;
@@ -23,12 +23,14 @@ public class ReverseArray {
             return;
         }
 
-        displayArray("   До реверса:", numbers );
-        reverseArray(numbers);
-        displayArray("После реверса:", numbers);
+        //System.out.print("   До реверса" + numbers);
+
+        displayArray("   До реверса", numbers);
+        arrayReverse(numbers);
+        displayArray("После реверса", numbers);
     }
 
-    public static void reverseArray(int[] numbers) {
+    public static void arrayReverse(int[] numbers) {
         int left = 0;
         int right = numbers.length - 1;
         while (left < right) {
@@ -43,7 +45,7 @@ public class ReverseArray {
     public static void displayArray(String message, int[] tempFirstTaskArr ) {
         System.out.print("\n" + message + " [ ");
         for (int number : tempFirstTaskArr) {
-            System.out.print(number + ", ");
+            System.out.print(number + " ");
         }
         System.out.print("] ");
     }
