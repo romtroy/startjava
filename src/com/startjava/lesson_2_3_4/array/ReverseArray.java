@@ -7,45 +7,53 @@ public class ReverseArray {
         int[] array3 = {6, 8, 9, 1};
         int[] array4 = {13, 8, 5, 3, 2, 1, 1};
 
-        displayResult(arrayEmpty);
-        displayResult(arrayNull);
-        displayResult(array3);
-        displayResult(array4);
+        int[] reverseEmpty = reverseArray(arrayEmpty);
+        displayResult(arrayEmpty, reverseEmpty);
+
+        int[] reverseNull = reverseArray(arrayNull);
+        displayResult(arrayNull, reverseNull);
+
+        int[] reverseArray3 = reverseArray(array3);
+        displayResult(array3, reverseArray3);
+
+        int[] reverseArray4 = reverseArray(array4);
+        displayResult(array4, reverseArray4);
     }
 
-    private static void reverseArray(int[] numbers) {
+    private static int[] reverseArray(int[] numbers) {
         if (numbers == null || numbers.length == 0) {
-            return;
+            return numbers;
         }
 
+        int[] reversed = numbers.clone();
+
         int left = 0;
-        int right = numbers.length - 1;
+        int right = reversed.length - 1;
         while (left < right) {
-            int temp = numbers[left];
-            numbers[left] = numbers[right];
-            numbers[right] = temp;
+            int temp = reversed[left];
+            reversed[left] = reversed[right];
+            reversed[right] = temp;
             left++;
             right--;
         }
+        return reversed;
     }
 
-    private static void displayResult(int[] numbers) {
-        if (numbers == null) {
+    private static void displayResult(int[] original, int[] reversed) {
+        if (original == null) {
             System.out.println("Массив равен null");
             return;
         }
-        if (numbers.length == 0) {
+        if (original.length == 0) {
             System.out.println("Пустой массив");
             return;
         }
 
         System.out.print("   До реверса: ");
-        printArray(numbers);
-
-        reverseArray(numbers); //или сам вызов этого метода необходимо в main перенести ?
+        printArray(original);
 
         System.out.print("После реверса: ");
-        printArray(numbers);
+        printArray(reversed);
     }
 
     private static void printArray(int[] numbers) {
