@@ -21,7 +21,7 @@ public class TriangleSymbolSorted {
 
     private static void displayTriangle(char start, char end, boolean direction) {
         if (start > end) {
-            System.out.print("\nОшибка: левая граница (" + (int)start + ") > правой (" + (int)end + ") \n");
+            System.out.print("\nОшибка: левая граница (" + (int) start + ") > правой (" + (int) end + ") \n");
             return;
         }
         StringBuilder symbolsString = new StringBuilder();
