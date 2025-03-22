@@ -4,20 +4,19 @@ import java.util.Arrays;
 
 public class ReverseArray {
     public static void main(String[] args) {
-        int[] arrayEmpty = {};
-        int[] arrayNull = null;
-        int[] array3 = {6, 8, 9, 1};
-        int[] array4 = {13, 8, 5, 3, 2, 1, 1};
-
+        int[] arrayEmpty = new int[]{};
         int[] reversed = reverse(arrayEmpty);
         displayResult(arrayEmpty, reversed);
 
+        int[] arrayNull = null;
         reversed = reverse(arrayNull);
         displayResult(arrayNull, reversed);
 
+        int[] array3 = {6, 8, 9, 1};
         reversed = reverse(array3);
         displayResult(array3, reversed);
 
+        int[] array4 = {13, 8, 5, 3, 2, 1, 1};
         reversed = reverse(array4);
         displayResult(array4, reversed);
     }
@@ -32,7 +31,6 @@ public class ReverseArray {
 
         for (int num : numbers) {
             reversed[lastIndex--] = num;
-            System.out.print(num);
         }
         return reversed;
     }
