@@ -29,8 +29,8 @@ public class ReverseArray {
         int[] reversed = new int[numbers.length];
         int lastIndex = numbers.length - 1;
 
-        for (int num : numbers) {
-            reversed[lastIndex--] = num;
+        for (int temporaryNumber : numbers) {
+            reversed[lastIndex--] = temporaryNumber;
         }
         return reversed;
     }
