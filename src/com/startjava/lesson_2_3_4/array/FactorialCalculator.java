@@ -1,44 +1,41 @@
 package com.startjava.lesson_2_3_4.array;
 
-public class FactorialCalculating {
+public class FactorialCalculator {
     public static void main(String[] args) {
         int[] emptyArray = {};
-        int[] nullArray = null;
-        int[] array1 = {8, 0, 9};
-        int[] array2 = {-3, 1, 7, 13};
-        int[] array3 = {-22, 0};
-
-        long[] calculatedFactorials = workWithFactorials(emptyArray);
+        long[] calculatedFactorials = calc(emptyArray);
         displayFactorials(emptyArray, calculatedFactorials);
 
-        calculatedFactorials = workWithFactorials(nullArray);
+        int[] nullArray = null;
+        calculatedFactorials = calc(nullArray);
         displayFactorials(nullArray, calculatedFactorials);
 
-        calculatedFactorials = workWithFactorials(array1);
+        int[] array1 = {8, 0, 9};
+        calculatedFactorials = calc(array1);
         displayFactorials(array1, calculatedFactorials);
 
-        calculatedFactorials = workWithFactorials(array2);
+        int[] array2 = {-3, 1, 7, 13};
+        calculatedFactorials = calc(array2);
         displayFactorials(array2, calculatedFactorials);
 
-        calculatedFactorials = workWithFactorials(array3);
+        int[] array3 = {-22, 0};
+        calculatedFactorials = calc(array3);
         displayFactorials(array3, calculatedFactorials);
     }
 
-    private static long[] workWithFactorials(int[] numbers) {
+    private static long[] calc(int[] numbers) {
         if (numbers == null || numbers.length == 0) {
             return null;
         }
-        long[]  factorialsTemp = new long[numbers.length];
+        long[] factorials = new long[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
-            factorialsTemp[i] = factorialCalc(numbers[i]);
+            factorials[i] = calculateFactorial(numbers[i]);
         }
-        return factorialsTemp;
+        return factorials;
     }
-    private static long factorialCalc(int n) {
-        if (n < 0) {
-            return 1;
-        }
+
+    private static long calculateFactorial(int n) {
         long result = 1;
         for (int i = 1; i <= n; i++) {
             result *= i;
@@ -63,10 +60,10 @@ public class FactorialCalculating {
 
     private static String formatFactorial(int n, long factorial) {
         return (n < 0) ? "Ошибка: факториал " + n + "! не определен" :
-                (n + "! = " + factorialViewString(n) + " = " + factorial);
+                (n + "! = " + expressionFactorialToString(n) + " = " + factorial);
     }
 
-    private static String factorialViewString(int n) {
+    private static String expressionFactorialToString(int n) {
         if (n == 0) return "1";
         StringBuilder expressionFactorial = new StringBuilder("1");
 
