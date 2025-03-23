@@ -54,22 +54,22 @@ public class FactorialCalculator {
         }
 
         for (int i = 0; i < numbers.length; i++) {
-            System.out.println(formatFactorial(numbers[i], factorials[i]));
+            System.out.println(expressionFactorialToString(numbers[i], factorials[i]));
         }
     }
 
-    private static String formatFactorial(int n, long factorial) {
-        return (n < 0) ? "Ошибка: факториал " + n + "! не определен" :
-                (n + "! = " + expressionFactorialToString(n) + " = " + factorial);
-    }
+    private static String expressionFactorialToString(int n, long factorial) {
+        if (n < 0) {
+            return ("Ошибка: факториал " + n + "! не определен");
+        }
+        if (n == 0 || n == 1) {
+            return (n + "! = 1");
+        }
 
-    private static String expressionFactorialToString(int n) {
-        if (n == 0) return "1";
-        StringBuilder expressionFactorial = new StringBuilder("1");
-
+        StringBuilder expression = new StringBuilder("1");
         for (int i = 2; i <= n; i++) {
-            expressionFactorial.append(" * ").append(i);
+            expression.append(" * ").append(i);
         }
-        return expressionFactorial.toString();
+        return (n + "! = " + expression + " = " + factorial);
     }
 }
