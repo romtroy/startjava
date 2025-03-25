@@ -26,26 +26,27 @@ public class TriangleSymbolSorted {
 
     private static String[] constructionTriangle(char start, char end, boolean direction) {
         if (start > end) {
-            return new String[]{"Ошибка: левая граница (" + start + ") > правой (" + end + ")"};
+            return new String[]{" Ошибка: левая граница (" + start + ") > правой (" + end + ")"};
         }
 
-        StringBuilder symbolsString = new StringBuilder();
-        for (int i = start; i <= end; i++) {
-            symbolsString.append((char) i);
+        char[] symbols = new char[(end - start + 1)];
+        for (int i = 0; i <= (end - start); i++) {
+            symbols[i] = (char) (start + i);
         }
 
         String sortedSymbols;
         if (direction) {
-            sortedSymbols = symbolsString.toString();
+            sortedSymbols = new String(symbols);
         } else {
-            sortedSymbols = symbolsString.reverse().toString();
+            StringBuilder reversedSymbols = new StringBuilder(new String(symbols));
+            sortedSymbols = reversedSymbols.reverse().toString();
         }
 
         int stringLength = sortedSymbols.length();
         String[] triangleArray = new String[stringLength];
 
         for (int i = 0; i < stringLength; i++) {
-            String spaces = " ".repeat((stringLength - i) - 1);
+            String spaces = " ".repeat(stringLength - i - 1);
             String lettersLine = String.valueOf(sortedSymbols.charAt(i)).repeat(2 * i + 1);
             triangleArray[i] = spaces + lettersLine + spaces;
         }
