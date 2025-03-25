@@ -14,16 +14,21 @@ public class TriangleSymbolSorted {
         char char6 = 'J';
         boolean third = false;
 
-        displayTriangle(char1, char2, first);
-        displayTriangle(char3, char4, second);
-        displayTriangle(char5, char6, third);
+        String[] triangle1 = constructionTriangle(char1, char2, first);
+        displayTriangle(triangle1);
+
+        String[] triangle2 = constructionTriangle(char3, char4, second);
+        displayTriangle(triangle2);
+
+        String[] triangle3 = constructionTriangle(char5, char6, third);
+        displayTriangle(triangle3);
     }
 
-    private static void displayTriangle(char start, char end, boolean direction) {
+    private static String[] constructionTriangle(char start, char end, boolean direction) {
         if (start > end) {
-            System.out.print("\nОшибка: левая граница (" + (int) start + ") > правой (" + (int) end + ") \n");
-            return;
+            return new String[]{"Ошибка: левая граница (" + start + ") > правой (" + end + ")"};
         }
+
         StringBuilder symbolsString = new StringBuilder();
         for (int i = start; i <= end; i++) {
             symbolsString.append((char) i);
@@ -44,9 +49,13 @@ public class TriangleSymbolSorted {
             String lettersLine = String.valueOf(sortedSymbols.charAt(i)).repeat(2 * i + 1);
             triangleArray[i] = spaces + lettersLine + spaces;
         }
+        return triangleArray;
+    }
 
+    private static void displayTriangle(String[] triangleArray) {
         for (String line : triangleArray) {
             System.out.println(line);
         }
+        System.out.println(" ");
     }
 }
