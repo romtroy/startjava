@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ReverseArray {
     public static void main(String[] args) {
-        int[] arrayEmpty = new int[]{};
+        int[] arrayEmpty = {};
         int[] reversed = reverse(arrayEmpty);
         displayResult(arrayEmpty, reversed);
 
@@ -29,8 +29,8 @@ public class ReverseArray {
         int[] reversed = new int[numbers.length];
         int lastIndex = numbers.length - 1;
 
-        for (int temporaryNumber : numbers) {
-            reversed[lastIndex--] = temporaryNumber;
+        for (int currentNumber : numbers) {
+            reversed[lastIndex--] = currentNumber;
         }
         return reversed;
     }
