@@ -30,14 +30,14 @@ public class FactorialCalculator {
         long[] factorials = new long[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
-            factorials[i] = calculateFactorial(numbers[i]);
+            factorials[i] = calcFactorial(numbers[i]);
         }
         return factorials;
     }
 
-    private static long calculateFactorial(int n) {
+    private static long calcFactorial(int n) {
         long result = 1;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 2; i <= n; i++) {
             result *= i;
         }
         return result;
@@ -70,6 +70,10 @@ public class FactorialCalculator {
         for (int i = 2; i <= n; i++) {
             expression.append(" * ").append(i);
         }
-        return (n + "! = " + expression + " = " + factorial);
+        return new StringBuilder().append(n)         //return (n + "! = " + expression + " = " + factorial);
+                .append("! = ")
+                .append(expression)
+                .append(" = ")
+                .append(factorial).toString();
     }
 }
