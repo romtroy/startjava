@@ -2,35 +2,23 @@ package com.startjava.lesson_2_3_4.array;
 
 public class TriangleSymbolSorted {
     public static void main(String[] args) {
-        char char1 = '0';
-        char char2 = '9';
-        boolean first = true;
-
-        char char3 = '/';
-        char char4 = '!';
-        boolean second = false;
-
-        char char5 = 'A';
-        char char6 = 'J';
-        boolean third = false;
-
-        String[] triangle1 = constructionTriangle(char1, char2, first);
+        StringBuilder triangle1 = formTriangle('0', '9', true);
         displayTriangle(triangle1);
 
-        String[] triangle2 = constructionTriangle(char3, char4, second);
+        StringBuilder triangle2 = formTriangle('/', '!', false);
         displayTriangle(triangle2);
 
-        String[] triangle3 = constructionTriangle(char5, char6, third);
+        StringBuilder triangle3 = formTriangle('A', 'J', false);
         displayTriangle(triangle3);
     }
 
-    private static String[] constructionTriangle(char start, char end, boolean direction) {
+    private static StringBuilder formTriangle(char start, char end, boolean direction) {
         if (start > end) {
-            return new String[]{" Ошибка: левая граница (" + start + ") > правой (" + end + ")"};
+            return new StringBuilder("Ошибка: левая граница (" + start + ") > правой (" + end + ")");
         }
-
-        char[] symbols = new char[(end - start + 1)];
-        for (int i = 0; i <= (end - start); i++) {
+        int count = (end - start + 1);
+        char[] symbols = new char[count];
+        for (int i = 0; i < count; i++) {
             symbols[i] = (char) (start + i);
         }
 
@@ -43,20 +31,16 @@ public class TriangleSymbolSorted {
         }
 
         int stringLength = sortedSymbols.length();
-        String[] triangleArray = new String[stringLength];
-
+        StringBuilder triangle = new StringBuilder();
         for (int i = 0; i < stringLength; i++) {
             String spaces = " ".repeat(stringLength - i - 1);
             String lettersLine = String.valueOf(sortedSymbols.charAt(i)).repeat(2 * i + 1);
-            triangleArray[i] = spaces + lettersLine + spaces;
+            triangle.append(spaces).append(lettersLine).append(spaces).append("\n");
         }
-        return triangleArray;
+        return triangle;
     }
 
-    private static void displayTriangle(String[] triangleArray) {
-        for (String line : triangleArray) {
-            System.out.println(line);
-        }
-        System.out.println(" ");
+    private static void displayTriangle(StringBuilder triangle) {
+        System.out.println(triangle);
     }
 }
