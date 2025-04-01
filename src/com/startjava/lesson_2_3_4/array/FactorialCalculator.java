@@ -53,6 +53,7 @@ public class FactorialCalculator {
             return;
         }
 
+        StringBuilder expression = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
             int n = numbers[i];
             if (n < 0) {
@@ -64,16 +65,12 @@ public class FactorialCalculator {
                 continue;
             }
 
-            StringBuilder expression = new StringBuilder("1");
+            expression.setLength(0);
+            expression.append("1");
             for (int j = 2; j <= n; j++) {
                 expression.append(" * ").append(j);
             }
-            System.out.println(new StringBuilder()
-                    .append(n)
-                    .append("! = ")
-                    .append(expression)
-                    .append(" = ")
-                    .append(factorials[i]));
+            System.out.println(n + "! = " + expression + " = " + factorials[i]);
         }
     }
 }
